@@ -18,14 +18,22 @@ abstract: đánh dấu là class hoặc method trìu tượng
 
  */
 public abstract class Animal {
-
     public String name;
     public int age;
 
     public abstract void eat();
 
+    public abstract void makeSound();
     public void run(){
         System.out.println("Animal running");
     }
 
+    public int run(String ten){
+        System.out.println(ten + " is running");
+        return 0;
+    }
+
+    public int run(String ten1,String ten2){
+        return 0;
+    }
 }

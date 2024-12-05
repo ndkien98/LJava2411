@@ -19,6 +19,11 @@ public class Bai1 {
             public void eat() {
                 System.out.println("tiger is eating");
             }
+
+            @Override
+            public void makeSound() {
+
+            }
         };
         tiger.eat();
     }

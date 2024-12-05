@@ -25,11 +25,15 @@ public class Animal {
         System.out.println(ten + " đang đi đi bằng " + soChan + " chan");
     }
 
+    // getter setter:
     public String getTen() {
         return ten;
     }
 
     public void setTen(String ten) {
+        // kiểm tra tên có hợp lệ không
+
+        // kiểm tra tên có bị null
         this.ten = ten;
     }
 

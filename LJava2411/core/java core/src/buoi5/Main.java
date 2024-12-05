@@ -2,6 +2,17 @@ package buoi5;
 
 import java.util.Scanner;
 
+/**
+
+ - Mối quan hệ giữa class và object
+    + object được tạo ra từ class
+    + class là một bản thiết kế để tạo ra các object
+
+    + object:
+        + thuộc tính
+        + hành vi
+
+ */
 public class Main {
 
     public static void main(String[] args) {

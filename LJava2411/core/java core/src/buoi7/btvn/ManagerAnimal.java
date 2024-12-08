@@ -12,17 +12,21 @@ public class ManagerAnimal {
     private Animal[] animals;
     private int currentAnimalIndex = 0;
     private int totalAnimals = 0;
+    private final int SIZE_EXTEND_DEFAULT = 5;
     public ManagerAnimal(int totalAnimals) {
         this.totalAnimals = totalAnimals;
         animals = new Animal[totalAnimals];
     }
 
     public void initAnimal(){
-        for (int i = 0; i < totalAnimals; i++) {
-
-        }
+        addNewAnimal();
     }
 
+    public void showAllAnimal(){
+        for (int i = 0; i < currentAnimalIndex; i++) {
+            animals[i].showInfo();
+        }
+    }
     public void addNewAnimal() {
         int typeAnimal = 0;
         do {
@@ -53,10 +57,22 @@ public class ManagerAnimal {
             }
             if (animal != null){
                 animal.enterInfo();
+                if (currentAnimalIndex == totalAnimals) {
+                    totalAnimals = totalAnimals + SIZE_EXTEND_DEFAULT;
+                    animals = copyArray(animals, totalAnimals);
+                }
                 animals[currentAnimalIndex] = animal;
                 currentAnimalIndex++;
                 System.out.println("Thêm động vật thứ " + currentAnimalIndex + " thành công");
             }
         }while (typeAnimal <= 3);
+    }
+
+    public Animal[] copyArray(Animal[] animals,int newSize) {
+        Animal[] animalsCopy = new Animal[newSize];
+        for (int i = 0; i < animals.length; i++) {
+            animalsCopy[i] = animals[i];
+        }
+        return animalsCopy;
     }
 }

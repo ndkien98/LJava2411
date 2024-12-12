@@ -1,6 +1,7 @@
 package buoi8.baitap;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Vector;
 
@@ -29,6 +30,11 @@ public class Manager extends Employee{
     public void hienThiThongTin() {
         System.out.println("Hiển thị thông tin quản lý: ");
         super.hienThiThongTin();
+        System.out.println("Danh sách mã nhân viên của quản lý: ");
+        for (Staff staff:danhSachNhanVien) {
+            System.out.printf(staff.getMaMV() + " ");
+        }
+        System.out.println();
     }
 
     public List<Staff> getDanhSachNhanVien() {

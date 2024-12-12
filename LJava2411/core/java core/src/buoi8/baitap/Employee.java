@@ -30,8 +30,8 @@ public abstract class Employee {
         this.sdt = scanner.nextLine();
         System.out.println("Nhap thong tin So Ngay Lam Viec: ");
         this.soNgayLamViec = scanner.nextInt();
-        System.out.println("Nhap thong tin Luong Mot Ngay: ");
-        this.luongMotNgay = scanner.nextDouble();
+//        System.out.println("Nhap thong tin Luong Mot Ngay: ");
+//        this.luongMotNgay = scanner.nextDouble();
     }
 
     public void hienThiThongTin(){

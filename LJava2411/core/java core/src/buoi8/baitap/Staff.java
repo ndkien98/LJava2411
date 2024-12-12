@@ -3,7 +3,7 @@ package buoi8.baitap;
 public class Staff extends Employee{
 
     // oTrưởng phòng quản lý (nếu có, nếu không có thì để null).
-    public Director truongPhong;
+    public Manager truongPhong;
 
     public Staff(){
         // Khởi tạo đối tượng cha
@@ -27,13 +27,16 @@ public class Staff extends Employee{
     public void hienThiThongTin() {
         System.out.println("Hiển thị thông tin nhân viên: ");
         super.hienThiThongTin();
+        if (truongPhong != null){
+            System.out.println("Thông tin quản lý: " + truongPhong.getMaMV() + " | " + truongPhong.getHoTen());
+        }
     }
 
-    public Director getTruongPhong() {
+    public Manager getTruongPhong() {
         return truongPhong;
     }
 
-    public void setTruongPhong(Director truongPhong) {
+    public void setTruongPhong(Manager truongPhong) {
         this.truongPhong = truongPhong;
     }
 }

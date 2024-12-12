@@ -27,7 +27,9 @@ public class Company {
         System.out.println();
         System.out.println("=======Thông tin toàn bộ nhân viên trong công ty======");
         for(Employee employee : danhSachNhanVien){
+            System.out.println("--------------------------");
             employee.hienThiThongTin();
+            System.out.println("--------------------------");
         }
         System.out.println();
     }

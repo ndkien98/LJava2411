@@ -17,6 +17,7 @@ public class Manager extends Employee{
 
     @Override
     public double cachTinhLuongThang() {
+        System.out.println("Quản lý: ");
         return super.getLuongMotNgay() * super.getSoNgayLamViec() + (100 * danhSachNhanVien.size());
     }
 

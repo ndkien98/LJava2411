@@ -1,9 +1,6 @@
 package buoi8.baitap;
 
-import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Company {
 
@@ -49,6 +46,89 @@ public class Company {
         danhSachNhanVien.add(employee);
     }
 
+    public void tinhTongLuong(){
+        System.out.println("Tính và hiển thị tổng lương của tất cả nhân viên công ty: ");
+        double tong = 0;
+        // duyệt toàn bộ danh sách nhân viên
+        for (Employee employee : danhSachNhanVien){
+            // tính tổng lương của từng nhân viên, và cộng lại
+            System.out.println("Lương của nhân viên: " + employee.getMaMV() + " số ngày làm việc: " + employee.getSoNgayLamViec() + " lương 1 ngày: " + employee.getLuongMotNgay() + " = " + employee.cachTinhLuongThang());
+            /*
+            ví java có tính đa hình, lên ở danhSachNhanVien nhân viên
+            sẽ bao gồm cả staff, manager, director, mà mỗi
+            class đều đã ghi đè lại hàm cachTinhLuongThang
+            => khi runtime employee sẽ tự động được sử dụng
+            cách tính lương tháng của các class đã ghi đè
+             */
+            tong+=employee.cachTinhLuongThang();
+        }
+        System.out.println("Tổng lương tháng của công ty là: " + tong);
+    }
+    /*
+    Stream:
+        là 1 kiểu dữ liệu liên tục, được phát triển từ java 8,
+        khi sử dụng steam sẽ được thực hiện các thao tác với
+        dữ liệu liên tục, có thể tạo ra được tập hợp các dữ liệu
+        mới
+     */
+    public void tinhTongLuongC2(){
+        double tong = this.danhSachNhanVien.stream() // biến array list thành kiểu dữ liệu stream
+                .mapToDouble // biến list employee thành 1 list các số double bằng return
+                        (employee -> {
+            System.out.println("Lương của nhân viên: " + employee.getMaMV() + " số ngày làm việc: " + employee.getSoNgayLamViec() + " lương 1 ngày: " + employee.getLuongMotNgay() + " = " + employee.cachTinhLuongThang());
+            return employee.cachTinhLuongThang();
+        }).sum(); //  sử dụng hàm sum của stream để tính tổng tất cả các số
+        System.out.println("Tổng lương tháng của công ty là: " + tong);
+    }
+
+    // c1
+    public void timNhanVienCoLuongCaoNhat(){
+        System.out.println("Duyệt danh sách nhân viên: ");
+        double maxLuong = Double.MIN_VALUE;
+        Employee employee = null;
+        for (Employee e:danhSachNhanVien){
+            // nếu không phải nhân viên thường => bỏ qua
+            if (!(e instanceof Staff)){
+                continue;
+            }
+            // nếu lương của nhân viên được duyệt > lương max hiện tại
+            if (e.cachTinhLuongThang() > maxLuong){
+                // gán data
+                maxLuong = e.cachTinhLuongThang();
+                employee = e;
+            }
+        }
+        if (employee != null){
+            System.out.println("Nhân viên có lương cao nhất là: ");
+            employee.hienThiThongTin();
+            return;
+        }
+        System.out.println("Không tìm thấy nhân viên");
+    }
+
+    /**
+     c2: Sử dụng Stream, method referent
+     Optional: là 1 class cung cấp sẵn các hàm để kiểm tra null hoặc tisnh tồn tại của object, thay cho việc
+     phải sử dụng các biểu thực != null, === null....
+     */
+    public void timNhanVienCoLuongCaoNhatC2(){
+        Optional<Employee> employeeOptional = danhSachNhanVien.stream() // biến danh sách thành Stream
+                .max( // sử dụng hàm max để tìm ra phần tử có giá trị lớn nhất với điều kiện được tính bằng
+                        Comparator.comparingDouble(Employee::cachTinhLuongThang) // sử dụng hàm cách tisnh lương để so sánh:
+                        // sử dụng method referent thay cho lambda employee -> employee.cachTinhLuongThang()
+                );
+        if (employeeOptional.isPresent()){ // thay cho việc kiểm tra employeeOptional != null
+            System.out.println("Nhân viên có lương cao nhất là: ");
+            Employee employee = employeeOptional.get(); // lấy ra value object từ optional sử dụng hàm get
+            employee.hienThiThongTin();
+            return;
+        }
+        System.out.println("Không tìm thấy nhân viên");
+    }
+
+    /*
+    c8: Tìm trưởng phòng có số lượng nhân viên dưới quyền nhiều nhất
+     */
     private Employee chonLoaiNhanVien() {
         Employee employee = null;
         int luaChon= 0;

@@ -13,7 +13,14 @@ public class Main {
             System.out.println("3: Thêm, một nhân sự");
             System.out.println("4: xóa thông tin mot nhat su");
             System.out.println("5: Hien thi danh sach nhan vien");
-            System.out.println("6: Thoat");
+            System.out.println("6: Tính và xuất tổng lương cho toàn bộ công ty");
+            System.out.println("7: Tìm nhân viên thường có lương cao nhất");
+            System.out.println("8: Tìm trưởng phòng có số lượng nhân viên dưới quyền nhiều nhất");
+            System.out.println("9: Sắp xếp toàn bộ nhân viên trong công ty với thứ tự ABC");
+            System.out.println("10: Sắp xếp toàn bộ nhân viên trong công ty với lương giảm dần");
+            System.out.println("11 : Tìm giám đốc có lượng cổ phiếu nhiều nhất");
+            System.out.println("12 : Hiển thị tổng thu nhập của từng giảm đốc");
+            System.out.println("13: Thoat");
             type = new Scanner(System.in).nextInt();
             switch (type) {
                 case 1:
@@ -35,6 +42,6 @@ public class Main {
                     System.out.println("Thoat!");
                     break;
             }
-        }while (type != 6);
+        }while (type != 13);
     }
 }

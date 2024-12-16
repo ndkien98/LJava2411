@@ -35,6 +35,7 @@ public class Director extends Employee{
 
     @Override
     public double cachTinhLuongThang() {
+        System.out.println("giám đốc: ");
         return super.getLuongMotNgay() * super.getSoNgayLamViec();
     }
 

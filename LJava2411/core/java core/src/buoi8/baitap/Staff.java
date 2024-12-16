@@ -14,6 +14,7 @@ public class Staff extends Employee{
 
     @Override
     public double cachTinhLuongThang() {
+        System.out.println("Nhân viên: ");
         return super.getLuongMotNgay() * super.getSoNgayLamViec();
     }
 

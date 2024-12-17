@@ -1,6 +1,7 @@
 package buoi8.baitap;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Company {
 
@@ -52,7 +53,7 @@ public class Company {
         // duyệt toàn bộ danh sách nhân viên
         for (Employee employee : danhSachNhanVien){
             // tính tổng lương của từng nhân viên, và cộng lại
-            System.out.println("Lương của nhân viên: " + employee.getMaMV() + " số ngày làm việc: " + employee.getSoNgayLamViec() + " lương 1 ngày: " + employee.getLuongMotNgay() + " = " + employee.cachTinhLuongThang());
+            System.out.println("Lương của nhân viên: " + employee.getMaMV() + " số ngày làm việc: " + employee.getSoNgayLamViec() + ", lương 1 ngày: " + employee.getLuongMotNgay() + " => tổng lương = " + employee.cachTinhLuongThang());
             /*
             ví java có tính đa hình, lên ở danhSachNhanVien nhân viên
             sẽ bao gồm cả staff, manager, director, mà mỗi
@@ -129,6 +130,120 @@ public class Company {
     /*
     c8: Tìm trưởng phòng có số lượng nhân viên dưới quyền nhiều nhất
      */
+    public void timTruongPhong(){
+        System.out.println("Bắt đầu tìm trưởng phòng ");
+        // duyệt danh sách nhân viên
+        Manager managerTerm = null;
+        List<Staff> staffTerm = null;
+        Manager managerTarget = new Manager();
+        managerTarget.setDanhSachNhanVien(new ArrayList<>());
+        for (Employee employee : danhSachNhanVien){
+            // nếu không phải trưởng phòng => bỏ qua
+            if (!(employee instanceof Manager)){
+                continue;
+            }
+            // nếu là trưởng phòng => tiếp tục xử lý
+            managerTerm = (Manager) employee;
+            // lấy danh sach nhân viên của quản lý đó
+            staffTerm = managerTerm.getDanhSachNhanVien();
+            // nếu danh sách nhân viên bằng null hoặc empty => bỏ qua
+            if (staffTerm == null || staffTerm.isEmpty()){
+                continue;
+            }
+            // nếu danh sách nhân viên > tổng số nhân viên đang kiểm tra
+            if (staffTerm.size() > managerTarget.getDanhSachNhanVien().size()){
+                // gán quản lý term đang kiểm tra cho quản lý đang cần tìm
+                managerTarget = managerTerm;
+            }
+        }
+        if (managerTarget.getMaMV() != null){
+            System.out.println("Quản lý có số lượng nhân viên nhiều nhất: ");
+            managerTarget.hienThiThongTin();
+        }
+    }
+
+    /**
+     9: Sắp xếp toàn bộ nhân viên trong công ty với thứ tự ABC
+     */
+    public void sapXepNhanVienTheoTen(){
+        if (this.danhSachNhanVien == null || this.danhSachNhanVien.isEmpty()){
+            System.out.println("Danh sách đang trống");
+            return;
+        }
+        this.danhSachNhanVien
+                .stream() // biến danh sách nhân viên thành stream
+                .filter(data -> data != null && data.getHoTen() != null) // lọc bỏ những nhân viên bằng null hoặc nhập tên bằng null
+                .sorted((employee1,employee2) -> employee1.getHoTen().compareTo(employee2.getHoTen())) // sắp xếp các nhân viên theo tên ABC
+                .forEach(Employee::hienThiThongTin); // hiển thị từng phần tử trong danh sách nhân viên
+    }
+
+    /**
+     10: Sắp xếp toàn bộ nhân viên trong công ty với lương giảm dần
+     */
+    public void sapXepNhanVienTheoLuongGiamDan() {
+        if (this.danhSachNhanVien == null || this.danhSachNhanVien.isEmpty()) {
+            System.out.println("Danh sách đang trống");
+            return;
+        }
+
+        this.danhSachNhanVien
+                .stream() // biến danh sách nhân viên thành stream
+                .filter(Objects::nonNull) // lọc bỏ những nhân viên null
+                .sorted((employee1, employee2) -> {
+                    // Lấy lương của nhân viên
+                    Double luong1 = employee1.cachTinhLuongThang();
+                    Double luong2 = employee2.cachTinhLuongThang();
+                    // Sắp xếp lương giảm dần (lương cao hơn lên trước)
+                    return Double.compare(luong2, luong1);
+                })
+                .forEach(Employee::hienThiThongTin); // hiển thị từng nhân viên
+    }
+    /*
+    11: Tìm giám đốc có lượng cổ phiếu nhiều nhất
+     */
+    public void timGiamDoc(){
+        if (this.danhSachNhanVien == null || this.danhSachNhanVien.isEmpty()){
+            System.out.println("Danh sách đang trống");
+            return;
+        }
+        Employee directorTarget = this.danhSachNhanVien
+                .stream() // biến danh sách nhân viên thành stream
+                .filter(employee -> { // duyệt từng nhân viên và lọc tìm ra giám đốc
+                    if (!(employee instanceof Director)){ // nếu không phải giảm đốc => return false phần tử đó sẽ được loại bỏ
+                        return false;
+                    }
+                    return true; // ngược lại return true => phần tử đó sẽ được giữ lại
+                }).max(Comparator.comparing(data -> { // lọc các phần tử và tìm ra giám đóc có cổ phần cao nhất
+                    Director director = (Director) data; // ép kiểu về giám đốc
+                    return director.getCoPhan(); // trả về số lượng cổ phần, việc còn lại tự method max sẽ kiểm tra và trả về giám đóc có cổ phần lớn nhất
+                })).orElse(null); // trường hợp xấu nhất không có nhân viên nào đáp ứng được điều kiện filter => trả về null
+        // kiểm tra và hiển thị
+        if (directorTarget != null){
+            System.out.println("Giám đốc có cổ phần cao nhất: ");
+            directorTarget.hienThiThongTin();
+        }
+    }
+    /**
+     12 : Hiển thị tổng thu nhập của từng giảm đốc
+     */
+    public void hienThiThuNhapGiamDoc(){
+        if (this.danhSachNhanVien == null || this.danhSachNhanVien.isEmpty()){
+            System.out.println("Danh sách đang trống");
+            return;
+        }
+        this.danhSachNhanVien
+                .stream() // biến danh sách nhân viên thành stream
+                .filter(employee -> { // duyệt từng nhân viên và lọc tìm ra giám đốc
+                    if (!(employee instanceof Director)){ // nếu không phải giảm đốc => return false phần tử đó sẽ được loại bỏ
+                        return false;
+                    }
+                    return true; // ngược lại return true => phần tử đó sẽ được giữ lại
+                }).forEach(employee -> {// duyệt và hiển thị thông tin từng giám đốc
+                    Director director = (Director) employee; // ép kiểu về giáo đốc
+                    System.out.println("Tổng thu nhập giám đốc: " + director.getHoTen() + " là: " + director.cachTinhLuongThang());
+                });
+    }
+
     private Employee chonLoaiNhanVien() {
         Employee employee = null;
         int luaChon= 0;
@@ -137,7 +252,7 @@ public class Company {
         System.out.println("2: Quản lý");
         System.out.println("3: Nhân viên");
         System.out.println("4: Hủy");
-        luaChon = new Scanner(System.in).nextInt();
+        luaChon = nhapLuaChon();
         switch (luaChon){
             case 1:
                 employee = new Director();
@@ -155,9 +270,18 @@ public class Company {
                 System.out.println("Không hợp lệ, đề nghị nhập lại");
                 break;
         }
-
         return employee;
     }
+    public static int nhapLuaChon(){
+        try {
+            int type = new Scanner(System.in).nextInt();
+            return type;
+        }catch (Exception e){
+            System.out.println("Lỗi bạn đã nhập ký tự không phải số");
+            return 1;
+        }
+    }
+
     /*
   o	Xóa: Cho phép xóa nhân viên hoặc trưởng phòng khỏi hệ thống.
      	Khi xóa trưởng phòng, cần phải ngắt liên kết giữa trưởng phòng đó và các nhân viên dưới quyền của họ.

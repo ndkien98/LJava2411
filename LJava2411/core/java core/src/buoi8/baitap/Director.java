@@ -31,6 +31,7 @@ public class Director extends Employee{
     public void hienThiThongTin() {
         System.out.println("Thông tin giám đốc: ");
         super.hienThiThongTin();
+        System.out.println("Cổ phần: " + this.coPhan);
     }
 
     @Override

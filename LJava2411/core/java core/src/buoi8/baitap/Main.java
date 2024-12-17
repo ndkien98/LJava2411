@@ -21,7 +21,7 @@ public class Main {
             System.out.println("11 : Tìm giám đốc có lượng cổ phiếu nhiều nhất");
             System.out.println("12 : Hiển thị tổng thu nhập của từng giảm đốc");
             System.out.println("13: Thoat");
-            type = new Scanner(System.in).nextInt();
+            type = getType();
             switch (type) {
                 case 1:
                     company.nhapThongTinCongTy();
@@ -39,9 +39,43 @@ public class Main {
                     company.hienThiToanBoNhanVien();
                     break;
                 case 6:
-                    System.out.println("Thoat!");
+                    company.tinhTongLuong();
                     break;
+                case 7:
+                    company.timNhanVienCoLuongCaoNhat();
+                    break;
+                case 8:
+                    company.timTruongPhong();
+                    break;
+                case 9:
+                    company.sapXepNhanVienTheoTen();
+                    break;
+                case 10:
+                    company.sapXepNhanVienTheoLuongGiamDan();
+                    break;
+                case 11:
+                    company.timGiamDoc();
+                    break;
+                case 12:
+                    company.hienThiThuNhapGiamDoc();
+                    break;
+                case 13:
+                    System.out.println("Thoát!");
+                    break;
+                default:
+                    System.out.println("Bạn nhập chức năng không đúng, đề nghị nhập lại");
+                    type = 1;
             }
         }while (type != 13);
+    }
+
+    public static int getType(){
+        try {
+            int type = new Scanner(System.in).nextInt();
+            return type;
+        }catch (Exception e){
+            System.out.println("Lỗi bạn đã nhập ký tự không phải số");
+            return 1;
+        }
     }
 }

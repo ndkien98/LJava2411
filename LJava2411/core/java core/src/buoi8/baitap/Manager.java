@@ -31,11 +31,13 @@ public class Manager extends Employee{
     public void hienThiThongTin() {
         System.out.println("Hiển thị thông tin quản lý: ");
         super.hienThiThongTin();
-        System.out.println("Danh sách mã nhân viên của quản lý: ");
-        for (Staff staff:danhSachNhanVien) {
-            System.out.printf(staff.getMaMV() + " ");
+        if(this.danhSachNhanVien != null && !this.danhSachNhanVien.isEmpty()){
+            System.out.println("Danh sách mã nhân viên của quản lý: ");
+            for (Staff staff:danhSachNhanVien) {
+                System.out.printf(staff.getMaMV() + " ");
+            }
+            System.out.println();
         }
-        System.out.println();
     }
 
     public List<Staff> getDanhSachNhanVien() {

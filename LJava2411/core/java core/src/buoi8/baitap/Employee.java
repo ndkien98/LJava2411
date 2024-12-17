@@ -28,10 +28,7 @@ public abstract class Employee {
         this.hoTen = scanner.nextLine();
         System.out.println("Nhap thong tin SDT: ");
         this.sdt = scanner.nextLine();
-        System.out.println("Nhap thong tin So Ngay Lam Viec: ");
-        this.soNgayLamViec = scanner.nextInt();
-//        System.out.println("Nhap thong tin Luong Mot Ngay: ");
-//        this.luongMotNgay = scanner.nextDouble();
+        this.nhapSoNgayLamViec();
     }
 
     public void hienThiThongTin(){
@@ -45,6 +42,20 @@ public abstract class Employee {
 
     public abstract double cachTinhLuongThang();
 
+    public void nhapSoNgayLamViec() {
+        Scanner scanner = new Scanner(System.in);
+        boolean validInput = false;
+        do {
+            try {
+                System.out.print("Nhập thông tin Số Ngày Làm Việc: ");
+                this.soNgayLamViec = scanner.nextInt();
+                validInput = true; // Đúng kiểu và giá trị hợp lệ, thoát khỏi vòng lặp
+            } catch (Exception e) {
+                System.out.println("Lỗi nhập liệu! Vui lòng nhập một số nguyên hợp lệ.");
+                scanner.nextLine(); // Đọc và bỏ qua dòng lỗi để tránh vòng lặp vô hạn
+            }
+        } while (!validInput);
+    }
     public String getMaMV() {
         return maMV;
     }

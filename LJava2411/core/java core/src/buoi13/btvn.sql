@@ -125,3 +125,4 @@ from employees emp
                      group by dept.department_name) dept_avg_salary
                     on dept.department_name = dept_avg_salary.department_name
 where emp.salary > dept_avg_salary.avg_salary;
+

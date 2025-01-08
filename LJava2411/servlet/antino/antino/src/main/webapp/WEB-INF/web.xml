@@ -9,7 +9,7 @@
     <!-- Define the servlet -->
     <servlet>
         <servlet-name>HomeServlet</servlet-name>
-        <servlet-class>com.example.HomeServlet</servlet-class>
+        <servlet-class>vn.com.t3h.antino.controller.HomeServlet</servlet-class>
     </servlet>
 
     <!-- Map the servlet to a URL pattern -->

@@ -1,4 +1,4 @@
-package vn.com.t3h.antino.controller;
+package vn.com.t3h.antino.controller.demo;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

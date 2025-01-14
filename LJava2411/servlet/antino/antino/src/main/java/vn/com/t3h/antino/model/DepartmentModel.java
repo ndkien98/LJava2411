@@ -1,6 +1,6 @@
 package vn.com.t3h.antino.model;
 
-public class Department {
+public class DepartmentModel {
     private int departmentId;
     private String departmentName;
     private String location;

@@ -12,5 +12,7 @@
 </head>
 <body>
 <h1>home-page</h1>
+<br>
+<a href="employees">Danh sách nhân viên</a>
 </body>
 </html>

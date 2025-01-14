@@ -2,20 +2,18 @@ package vn.com.t3h.antino.dao.impl;
 
 
 import vn.com.t3h.antino.dao.EmployeeDAO;
-import vn.com.t3h.antino.model.Employee;
+import vn.com.t3h.antino.model.EmployeeModel;
 import vn.com.t3h.antino.util.DatabaseConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
-    public List<Employee> getAllEmployees() {
-        List<Employee> employees = new ArrayList<>();
+    public List<EmployeeModel> getAllEmployees() {
+        List<EmployeeModel> employeeModels = new ArrayList<>();
         String query = "SELECT e.employee_id, e.name, e.position, e.salary, e.hire_date, d.department_name " +
                 "FROM employees e " +
                 "LEFT JOIN departments d ON e.department_id = d.department_id";
@@ -25,20 +23,116 @@ public class EmployeeDAOImpl implements EmployeeDAO {
              ResultSet resultSet = statement.executeQuery()) {
 
             while (resultSet.next()) {
-                Employee employee = new Employee();
-                employee.setEmployeeId(resultSet.getInt("employee_id"));
-                employee.setName(resultSet.getString("name"));
-                employee.setPosition(resultSet.getString("position"));
-                employee.setSalary(resultSet.getDouble("salary"));
-                employee.setHireDate(resultSet.getString("hire_date"));
-                employee.setDepartmentName(resultSet.getString("department_name"));
+                EmployeeModel employeeModel = new EmployeeModel();
+                employeeModel.setEmployeeId(resultSet.getInt("employee_id"));
+                employeeModel.setName(resultSet.getString("name"));
+                employeeModel.setPosition(resultSet.getString("position"));
+                employeeModel.setSalary(resultSet.getDouble("salary"));
+                employeeModel.setHireDate(resultSet.getString("hire_date"));
+                employeeModel.setDepartmentName(resultSet.getString("department_name"));
 
-                employees.add(employee);
+                employeeModels.add(employeeModel);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return employeeModels;
+    }
+
+    @Override
+    public List<EmployeeModel> getAllEmployees2(String name, Long salary, String fromDate, String toDate, String position) {
+        List<EmployeeModel> employees = new ArrayList<>();
+
+        // SQL query with placeholders for parameters
+        String sql = "SELECT emp.employee_id, emp.name, emp.position, emp.salary, dept.department_name, emp.hire_date " +
+                "FROM employees emp " +
+                "LEFT JOIN departments dept ON emp.department_id = dept.department_id " +
+                "WHERE (? IS NULL OR ? = emp.name) " +
+                "AND (? IS NULL OR ? = emp.salary) " +
+                "AND (? IS NULL OR emp.hire_date >= ?) " +
+                "AND (? IS NULL OR emp.hire_date <= ?) " +
+                "AND (? IS NULL OR emp.position = ?)";
+
+        Connection conn = null;
+        try {
+            conn = DatabaseConnection.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            // Check if 'name' is null, if so, set NULL for both placeholders
+            if (name == null) {
+                pstmt.setNull(1, java.sql.Types.VARCHAR);
+                pstmt.setNull(2, java.sql.Types.VARCHAR);
+            } else {
+                pstmt.setString(1, name);
+                pstmt.setString(2, name);
+            }
+
+            // Check if 'salary' is null, if so, set NULL for both placeholders
+            if (salary == null) {
+                pstmt.setNull(3, Types.DECIMAL);
+                pstmt.setNull(4, Types.DECIMAL);
+            } else {
+                pstmt.setLong(3, salary);
+                pstmt.setLong(4, salary);
+            }
+
+            // Check if 'fromDate' is null, if so, set NULL for both placeholders
+            if (fromDate == null) {
+                pstmt.setNull(5, java.sql.Types.VARCHAR);
+                pstmt.setNull(6, java.sql.Types.VARCHAR);
+            } else {
+                pstmt.setString(5, fromDate);
+                pstmt.setString(6, fromDate);
+            }
+
+            // Check if 'toDate' is null, if so, set NULL for both placeholders
+            if (toDate == null) {
+                pstmt.setNull(7, java.sql.Types.VARCHAR);
+                pstmt.setNull(8, java.sql.Types.VARCHAR);
+            } else {
+                pstmt.setString(7, toDate);
+                pstmt.setString(8, toDate);
+            }
+
+            // Check if 'position' is null, if so, set NULL for both placeholders
+            if (position == null) {
+                pstmt.setNull(9, java.sql.Types.VARCHAR);
+                pstmt.setNull(10, java.sql.Types.VARCHAR);
+            } else {
+                pstmt.setString(9, position);
+                pstmt.setString(10, position);
+            }
+
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                // Process the result set and map to EmployeeModel
+                while (rs.next()) {
+                    EmployeeModel employee = new EmployeeModel();
+                    employee.setEmployeeId(rs.getInt("employee_id"));
+                    employee.setName(rs.getString("name"));
+                    employee.setPosition(rs.getString("position"));
+                    employee.setSalary(rs.getDouble("salary"));
+                    employee.setDepartmentName(rs.getString("department_name"));
+                    employee.setHireDate(rs.getString("hire_date"));
+                    employees.add(employee);
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle the exception, maybe log it or rethrow it
+        }finally {
+            if (conn != null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
         return employees;
     }
+
 }
 

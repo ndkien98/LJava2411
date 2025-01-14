@@ -1,6 +1,6 @@
 package vn.com.t3h.antino.model;
 
-public class Employee {
+public class EmployeeModel {
     private int employeeId;
     private String name;
     private String position;

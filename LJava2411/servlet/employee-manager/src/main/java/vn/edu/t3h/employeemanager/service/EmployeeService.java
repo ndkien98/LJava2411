@@ -7,4 +7,6 @@ import java.util.List;
 public interface EmployeeService {
 
     List<Employee> getAllEmployee();
+
+    List<Employee> findByFilter(String name,String salary,String fromDate,String toDate,String position);
 }

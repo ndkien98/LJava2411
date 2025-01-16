@@ -10,4 +10,9 @@ public class EmployeeDaoOracleImpl implements EmployeeDao {
     public List<Employee> getAllEmployee() {
         return null;
     }
+
+    @Override
+    public List<Employee> findByCondition(String name, String salary, String fromDate, String toDate, String position) {
+        return List.of();
+    }
 }

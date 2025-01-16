@@ -39,16 +39,97 @@ public class EmployeeDaoMysqlImpl implements EmployeeDao {
             e.printStackTrace();
             throw new RuntimeException(e);
         }finally {
-            if (connection != null){
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+            closeConnection(connection);
         }
         // trả về kết quả là danh sach employee
         return employeesResult;
+    }
+
+    private static void closeConnection(Connection connection) {
+        if (connection != null){
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public List<Employee> findByCondition(String name, String salary, String fromDate, String toDate, String position){
+        String sql = "SELECT e.employee_id, e.name, e.position, e.salary, d.department_name, e.hire_date\n" +
+                "FROM employees e\n" +
+                "         LEFT JOIN departments d ON e.department_id = d.department_id\n" +
+                "WHERE (e.name LIKE ? OR ? IS NULL)\n" +
+                "  AND (e.salary = ? OR ? IS NULL)\n" +
+                "  AND (e.hire_date >= ? or ? is NULL)\n" +
+                "  AND (e.hire_date <= ? or ? is NULL)\n" +
+                "  AND (e.position LIKE ? OR ? IS NULL)\n;";
+
+        Connection connection = null;
+        List<Employee> employees = new ArrayList<>();
+        try {
+           connection = getConnection();
+           PreparedStatement statement = connection.prepareStatement(sql);
+           setConditionFilter(name, salary, fromDate, toDate, position, statement);
+           ResultSet resultSet = statement.executeQuery();
+           while (resultSet.next()){
+               Employee employee = new Employee();
+               employee.setEmployeeId(resultSet.getInt("employee_id"));
+               employee.setName(resultSet.getString("name"));
+               employee.setPosition(resultSet.getString("position"));
+               employee.setSalary(resultSet.getDouble("salary"));
+               employee.setDepartmentName(resultSet.getString("department_name"));
+               employee.setHireDate(resultSet.getString("hire_date"));
+               employees.add(employee);
+           }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            closeConnection(connection);
+        }
+        return employees;
+    }
+
+    private static void setConditionFilter(String name, String salary, String fromDate, String toDate, String position, PreparedStatement statement) throws SQLException {
+        if (name != null){
+            statement.setString(1, "%" + name + "%");
+            statement.setString(2, "%" + name + "%");
+        }else {
+            statement.setNull(1, Types.VARCHAR);
+            statement.setNull(2, Types.VARCHAR);
+        }
+
+        if (salary != null){
+            statement.setLong(3, Long.parseLong(salary));
+            statement.setLong(4, Long.parseLong(salary));
+        }else {
+            statement.setNull(3, Types.DECIMAL);
+            statement.setNull(4, Types.DECIMAL);
+        }
+
+        if (fromDate != null){
+            statement.setString(5, fromDate);
+            statement.setString(6, fromDate);
+        }else {
+            statement.setNull(5, Types.VARCHAR);
+            statement.setNull(6, Types.VARCHAR);
+        }
+
+        if (toDate != null){
+            statement.setString(7, toDate);
+            statement.setString(8, toDate);
+        }else {
+            statement.setNull(7, Types.VARCHAR);
+            statement.setNull(8, Types.VARCHAR);
+        }
+
+        if (position != null){
+            statement.setString(9, "%" + position + "%");
+            statement.setString(10, "%" + position + "%");
+        }else {
+            statement.setNull(9, Types.VARCHAR);
+            statement.setNull(10, Types.VARCHAR);
+        }
     }
 
     public Connection getConnection(){

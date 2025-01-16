@@ -1,4 +1,4 @@
-package vn.edu.t3h.employeemanager.controller;
+package vn.edu.t3h.employeemanager.controller.employee;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -10,10 +10,9 @@ import vn.edu.t3h.employeemanager.dao.EmployeeDao;
 import vn.edu.t3h.employeemanager.dao.impl.EmployeeDaoMysqlImpl;
 import vn.edu.t3h.employeemanager.model.Employee;
 import vn.edu.t3h.employeemanager.service.EmployeeService;
-import vn.edu.t3h.employeemanager.service.EmployeeServiceImpl;
+import vn.edu.t3h.employeemanager.service.impl.EmployeeServiceImpl;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "EmployeeServlet",value = "/employee")
@@ -29,6 +28,9 @@ public class EmployeeServlet extends HttpServlet {
         employeeService = new EmployeeServiceImpl(employeeDao);
     }
 
+    /*
+    Chuyên tiếp nhận các request từ client, và trả về response
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -42,5 +44,15 @@ public class EmployeeServlet extends HttpServlet {
         req.setAttribute("employeeData",employees);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("employees.jsp");
         requestDispatcher.forward(req,resp);
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doDelete(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doPost(req, resp);
     }
 }

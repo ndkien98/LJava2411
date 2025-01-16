@@ -6,7 +6,11 @@ import vn.edu.t3h.employeemanager.model.Employee;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+Tầng chuyên tiếp nhận dữ liệu từ service làm input
+và thực hiện các thao tác với database như
+insert, query, update, delete
+ */
 public class EmployeeDaoMysqlImpl implements EmployeeDao {
 
     @Override

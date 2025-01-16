@@ -39,6 +39,6 @@ public class EmployeeServlet extends HttpServlet {
         List<EmployeeModel> employeeModels = employeeService.getAllEmployees(name,salary,fromDate,toDate,position);
         // Gửi dữ liệu nhân viên vào JSP
         request.setAttribute("employeeModels", employeeModels);
-        request.getRequestDispatcher("employees.jsp").forward(request, response);
+        request.getRequestDispatcher("employee-boopstrap.jsp").forward(request, response);
     }
 }

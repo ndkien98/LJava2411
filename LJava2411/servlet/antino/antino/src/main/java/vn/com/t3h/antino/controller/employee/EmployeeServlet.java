@@ -1,15 +1,18 @@
-package vn.com.t3h.antino.controller;
+package vn.com.t3h.antino.controller.employee;
 
 
+import com.oracle.wls.shaded.org.apache.bcel.classfile.Constant;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import vn.com.t3h.antino.dao.impl.DepartmentDaoImpl;
 import vn.com.t3h.antino.dao.impl.EmployeeDAOImpl;
 import vn.com.t3h.antino.model.EmployeeModel;
 import vn.com.t3h.antino.service.EmployeeService;
 import vn.com.t3h.antino.service.impl.EmployeeServiceImpl;
+import vn.com.t3h.antino.util.Constants;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,17 +23,16 @@ public class EmployeeServlet extends HttpServlet {
     private final EmployeeService employeeService;
 
     public EmployeeServlet() {
-        employeeService = new EmployeeServiceImpl(new EmployeeDAOImpl());
+        employeeService = new EmployeeServiceImpl(new EmployeeDAOImpl(),new DepartmentDaoImpl());
     }
 
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        List<Employee> employees = employeeService.getAllEmployees();
-//        request.setAttribute("employees", employees);
-//        request.getRequestDispatcher("employees.jsp").forward(request, response);
-//    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String message = request.getParameter("message");
+        if (Constants.ADD_EMPLOYEE_SUCCESS.equalsIgnoreCase(message)){
+            request.setAttribute("message", "Thêm mới nhân viên thành công");
+        }
+
         String name = request.getParameter("name");
         String salary = request.getParameter("salary");
         String fromDate = request.getParameter("fromDate");
@@ -39,6 +41,6 @@ public class EmployeeServlet extends HttpServlet {
         List<EmployeeModel> employeeModels = employeeService.getAllEmployees(name,salary,fromDate,toDate,position);
         // Gửi dữ liệu nhân viên vào JSP
         request.setAttribute("employeeModels", employeeModels);
-        request.getRequestDispatcher("employee-boopstrap.jsp").forward(request, response);
+        request.getRequestDispatcher("employees.jsp").forward(request, response);
     }
 }

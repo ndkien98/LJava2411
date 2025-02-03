@@ -9,4 +9,8 @@ public interface EmployeeDAO {
     List<EmployeeModel> getAllEmployees();
 
     List<EmployeeModel> getAllEmployees2(String name, Long salary, String fromDate, String toDate, String position);
+
+    public int addEmployee(EmployeeModel employee,int departmentId);
+
+    public EmployeeModel getEmployeeById(Integer id);
 }

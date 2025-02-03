@@ -120,18 +120,79 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle the exception, maybe log it or rethrow it
         }finally {
-            if (conn != null){
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+            closeConnection(conn);
         }
 
         return employees;
+    }
+
+    private static void closeConnection(Connection conn) {
+        if (conn != null){
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    @Override
+    public int addEmployee(EmployeeModel employee,int departmentId) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        int rowsInserted = 0;
+        try {
+            connection = DatabaseConnection.getConnection();
+            connection.setAutoCommit(false);
+            // Thêm mới nhân viên
+            String sql = "INSERT INTO employees (name, position, salary, department_id, hire_date) VALUES (?, ?, ?, ?, ?)";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, employee.getName());
+            statement.setString(2, employee.getPosition());
+            statement.setDouble(3, employee.getSalary());
+            statement.setInt(4, departmentId);
+            statement.setString(5, employee.getHireDate());
+
+            // Thực thi câu lệnh
+            rowsInserted = statement.executeUpdate();
+            connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection(connection);
+        }
+        return rowsInserted;
+    }
+
+    public EmployeeModel getEmployeeById(Integer id) {
+        EmployeeModel employeeModel = new EmployeeModel();
+        String query = "SELECT e.employee_id, e.name, e.position, e.salary, e.hire_date, d.department_name " +
+                "FROM employees e " +
+                "LEFT JOIN departments d ON e.department_id = d.department_id WHERE e.employee_id = ?";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+
+                employeeModel.setEmployeeId(resultSet.getInt("employee_id"));
+                employeeModel.setName(resultSet.getString("name"));
+                employeeModel.setPosition(resultSet.getString("position"));
+                employeeModel.setSalary(resultSet.getDouble("salary"));
+                employeeModel.setHireDate(resultSet.getString("hire_date"));
+                employeeModel.setDepartmentName(resultSet.getString("department_name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return employeeModel;
     }
 
 }

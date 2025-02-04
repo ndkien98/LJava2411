@@ -38,10 +38,13 @@ public class ActionEmployeeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int numberRows = employeeService.addNewEmployee(req);
-        if (numberRows > 0) {
-            resp.sendRedirect("/employees?message="+ Constants.ADD_EMPLOYEE_SUCCESS);
+        String deleted = req.getParameter("deleted");
+        if ("true".equals(deleted)) {
+            String id = req.getParameter("id");
+            employeeService.deletedById(Integer.parseInt(id));
+        }else {
+            employeeService.saveEmployee(req);
         }
-
+        resp.sendRedirect("/employees");
     }
 }

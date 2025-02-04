@@ -9,7 +9,9 @@ public interface EmployeeService {
 
     List<EmployeeModel> getAllEmployees(String name,String salary,String fromDate,String toDate,String position);
 
-    int addNewEmployee(HttpServletRequest request);
+    int saveEmployee(HttpServletRequest request);
 
     EmployeeModel findById(String id);
+
+    int deletedById(Integer id);
 }

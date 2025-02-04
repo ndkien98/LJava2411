@@ -48,14 +48,21 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public int addNewEmployee(HttpServletRequest request) {
+    public int saveEmployee(HttpServletRequest request) {
         // convert data từ param sang model class EmployeeModel
         EmployeeModel model = MapClientToSeverUtil.toModel(EmployeeModel.class,request);
-        // lấy ra department để lấy ra được departmentId sử dụng để insert employee
-//        DepartmentModel departmentModel = departmentDAO.getDepartmentByName(model.getDepartmentName());
-        // gọi tới hàm insert employee trong employeeDao
-        int numberRowInserted = employeeDAO.addEmployee(model,Integer.parseInt(model.getDepartmentName()));
-        return numberRowInserted;
+        int numberRowExecute = 0;
+        if (model.getEmployeeId() != null){
+            numberRowExecute = employeeDAO.updateEmployee(model);
+        }else {
+            numberRowExecute = employeeDAO.addEmployee(model);
+        }
+        return numberRowExecute;
+    }
+
+    public int deletedById(Integer id){
+        int numberRowDeleted = employeeDAO.deleteEmployee(id);
+        return numberRowDeleted;
     }
 
     public EmployeeModel findById(String id){

@@ -139,7 +139,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 
     @Override
-    public int addEmployee(EmployeeModel employee,int departmentId) {
+    public int addEmployee(EmployeeModel employee) {
         Connection connection = null;
         PreparedStatement statement = null;
         int rowsInserted = 0;
@@ -152,7 +152,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             statement.setString(1, employee.getName());
             statement.setString(2, employee.getPosition());
             statement.setDouble(3, employee.getSalary());
-            statement.setInt(4, departmentId);
+            statement.setInt(4, Integer.parseInt(employee.getDepartmentName()));
             statement.setString(5, employee.getHireDate());
 
             // Thực thi câu lệnh
@@ -165,6 +165,61 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         }
         return rowsInserted;
     }
+
+    public int deleteEmployee(int employeeId) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        int rowsDeleted = 0;
+        try {
+            connection = DatabaseConnection.getConnection();
+            connection.setAutoCommit(false);
+
+            // Xóa nhân viên theo employeeId
+            String sql = "DELETE FROM employees WHERE employee_id = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, employeeId);  // Sử dụng employeeId để xác định bản ghi cần xóa
+
+            // Thực thi câu lệnh
+            rowsDeleted = statement.executeUpdate();
+            connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection(connection);
+        }
+        return rowsDeleted;
+    }
+
+
+    public int updateEmployee(EmployeeModel employee) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        int rowsUpdated = 0;
+        try {
+            connection = DatabaseConnection.getConnection();
+            connection.setAutoCommit(false);
+
+            // Cập nhật thông tin nhân viên
+            String sql = "UPDATE employees SET name = ?, position = ?, salary = ?, department_id = ?, hire_date = ? WHERE employee_id = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, employee.getName());
+            statement.setString(2, employee.getPosition());
+            statement.setDouble(3, employee.getSalary());
+            statement.setInt(4, Integer.parseInt(employee.getDepartmentName()));
+            statement.setString(5, employee.getHireDate());
+            statement.setInt(6, employee.getEmployeeId());  // Dùng ID của nhân viên để xác định bản ghi cần cập nhật
+
+            // Thực thi câu lệnh
+            rowsUpdated = statement.executeUpdate();
+            connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection(connection);
+        }
+        return rowsUpdated;
+    }
+
 
     public EmployeeModel getEmployeeById(Integer id) {
         EmployeeModel employeeModel = new EmployeeModel();

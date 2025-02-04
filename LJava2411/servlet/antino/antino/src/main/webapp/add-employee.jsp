@@ -24,8 +24,16 @@
 <body>
 <div class="container">
     <div class="form-container">
-        <h2 class="mb-4 text-center">Add Employee</h2>
+
+        <c:if test="${empty model.employeeId}">
+            <h2 class="mb-4 text-center">Add New Employee</h2>
+        </c:if>
+        <c:if test="${not empty model.employeeId}">
+            <h2 class="mb-4 text-center">Edit Employee</h2>
+        </c:if>
         <form action="/action-employee" method="POST">
+            <input type="text" class="form-control" id="employeeId" name="employeeId" hidden
+                   value="${model.employeeId}" required>
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
                 <!-- Hiển thị giá trị name từ model nếu có, nếu không sẽ để trống -->

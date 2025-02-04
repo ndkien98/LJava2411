@@ -50,7 +50,7 @@
     <!-- Button thêm mới -->
     <div class="mt-3">
         <form action="/action-employee" method="get">
-            <button type="button" class="btn btn-success">
+            <button type="submit" class="btn btn-success">
                 <i class="fas fa-plus"></i> Add New
             </button>
         </form>
@@ -66,7 +66,7 @@
             <th>Salary</th>
             <th>Department</th>
             <th>Hire Date</th>
-            <th>Action</th>
+            <th width="20%">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -82,9 +82,11 @@
                     <a href="/action-employee?id=${employeeModel.employeeId}" class="btn btn-warning btn-sm">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a href="/action-employee?id=${employeeModel.employeeId}" class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash-alt"></i>
-                    </a>
+                    <form action="/action-employee?id=${employeeModel.employeeId}&deleted=true" method="post">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
                 </td>
             </tr>
         </c:forEach>

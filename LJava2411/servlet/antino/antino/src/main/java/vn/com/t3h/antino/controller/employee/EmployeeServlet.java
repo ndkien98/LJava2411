@@ -28,11 +28,6 @@ public class EmployeeServlet extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String message = request.getParameter("message");
-        if (Constants.ADD_EMPLOYEE_SUCCESS.equalsIgnoreCase(message)){
-            request.setAttribute("message", "Thêm mới nhân viên thành công");
-        }
-
         String name = request.getParameter("name");
         String salary = request.getParameter("salary");
         String fromDate = request.getParameter("fromDate");

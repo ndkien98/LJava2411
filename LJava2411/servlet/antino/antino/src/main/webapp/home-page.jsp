@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: 7390
@@ -6,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -197,7 +199,15 @@
         <a href="#">Dịch Vụ</a>
         <a href="#">Liên Hệ</a>
     </div>
-    <div id="userInfo" class="user-info"></div>
+    <div id="userInfo" class="user-info">
+        <c:if test="${not empty currentUser}">
+            <span>Xin chào, ${currentUser.username}</span>
+            <a href="${applicationScope.baseUrl}/logout">Đăng xuất</a>
+        </c:if>
+        <c:if test="${empty currentUser}">
+            <a href="${applicationScope.baseUrl}/login">Đăng nhập</a>
+        </c:if>
+    </div>
 </div>
 
 <!-- Phần hero -->
@@ -209,32 +219,32 @@
 <!-- Danh sách sản phẩm -->
 <div class="products-section">
     <div class="product-card">
-        <img src="https://source.unsplash.com/300x200/?laptop,technology" alt="Sản phẩm 1">
+        <img src="https://pos.nvncdn.com/f4d87e-8901/ps/20250106_OAoWXnVZUH.jpeg" alt="Sản phẩm 1">
         <h3>Sản phẩm 1</h3>
         <p>Thiết bị công nghệ mới nhất.</p>
     </div>
     <div class="product-card">
-        <img src="https://source.unsplash.com/300x200/?smartphone,gadget" alt="Sản phẩm 2">
+        <img src="https://pos.nvncdn.com/f4d87e-8901/ps/20250106_ObJSPkhi51.jpeg" alt="Sản phẩm 2">
         <h3>Sản phẩm 2</h3>
         <p>Điện thoại thông minh cao cấp.</p>
     </div>
     <div class="product-card">
-        <img src="https://source.unsplash.com/300x200/?headphone,tech" alt="Sản phẩm 3">
+        <img src="https://pos.nvncdn.com/f4d87e-8901/ps/20241229_4l7AWCw9XD.jpeg" alt="Sản phẩm 3">
         <h3>Sản phẩm 3</h3>
         <p>Tai nghe chống ồn siêu cấp.</p>
     </div>
     <div class="product-card">
-        <img src="https://source.unsplash.com/300x200/?watch,smartwatch" alt="Sản phẩm 4">
+        <img src="https://pos.nvncdn.com/f4d87e-8901/ps/20241229_5sbw1tbYCz.jpeg" alt="Sản phẩm 4">
         <h3>Sản phẩm 4</h3>
         <p>Đồng hồ thông minh.</p>
     </div>
     <div class="product-card">
-        <img src="https://source.unsplash.com/300x200/?camera,tech" alt="Sản phẩm 5">
+        <img src="https://pos.nvncdn.com/f4d87e-8901/ps/20241211_iO50QlV4aR.jpeg" alt="Sản phẩm 5">
         <h3>Sản phẩm 5</h3>
         <p>Máy ảnh chuyên nghiệp.</p>
     </div>
     <div class="product-card">
-        <img src="https://source.unsplash.com/300x200/?tablet,technology" alt="Sản phẩm 6">
+        <img src="https://pos.nvncdn.com/f4d87e-8901/ps/20241218_E9UlxlqSkG.jpeg" alt="Sản phẩm 6">
         <h3>Sản phẩm 6</h3>
         <p>Máy tính bảng cao cấp.</p>
     </div>
@@ -244,27 +254,6 @@
 <div class="footer">
     <p>&copy; 2025 Atino.vn | <a href="#">Điều Khoản</a> | <a href="#">Chính Sách</a></p>
 </div>
-
-<script>
-    var user = JSON.parse(localStorage.getItem('user'));
-
-    function checkLogin() {
-        var userInfoDiv = document.getElementById('userInfo');
-        if (user) {
-            userInfoDiv.innerHTML = 'Xin chào, ' + user.username + ' <span onclick="logout()">Đăng xuất</span>';
-        } else {
-            userInfoDiv.innerHTML = '<a href="http://localhost:8080/login">Đăng nhập</a>';
-        }
-    }
-
-    function logout() {
-        localStorage.removeItem('user');
-        checkLogin();
-    }
-
-    window.onload = checkLogin;
-</script>
-
 </body>
 </html>
 

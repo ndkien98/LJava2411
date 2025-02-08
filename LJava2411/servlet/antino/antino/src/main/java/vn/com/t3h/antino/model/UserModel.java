@@ -18,6 +18,18 @@ public class UserModel {
         this.roleId = roleId;
     }
 
+    @Override
+    public String toString() {
+        return "UserModel{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", deleted=" + deleted +
+                ", roleId=" + roleId +
+                '}';
+    }
+
     public UserModel() {
     }
 

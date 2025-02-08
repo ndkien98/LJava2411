@@ -14,13 +14,17 @@ public class CharacterEncodingFilter implements Filter {
         if (encodingParam != null) {
             encoding = encodingParam;
         }
+        ServletContext context = filterConfig.getServletContext();
+        // Đặt giá trị baseUrl vào ServletContext cho toàn bộ ứng dụng
+        context.setAttribute("baseUrl", ConfigInit.BASE_URL);
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        // Thiết lập mã hóa cho request và response
+        // Thiết lập mã hóa utf-8 cho request và response
         servletRequest.setCharacterEncoding(encoding);
         servletResponse.setCharacterEncoding(encoding);
+
         filterChain.doFilter(servletRequest, servletResponse); // Tiếp tục chuỗi xử lý
     }
 

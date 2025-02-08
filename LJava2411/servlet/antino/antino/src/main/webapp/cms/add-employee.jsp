@@ -31,7 +31,7 @@
         <c:if test="${not empty model.employeeId}">
             <h2 class="mb-4 text-center">Edit Employee</h2>
         </c:if>
-        <form action="/action-employee" method="POST">
+        <form action="/cms/action-employee" method="POST">
             <input type="text" class="form-control" id="employeeId" name="employeeId" hidden
                    value="${model.employeeId}" required>
             <div class="mb-3">

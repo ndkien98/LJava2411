@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -105,7 +106,6 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #28a745;
             color: white;
             padding: 15px 20px;
             border-radius: 5px;
@@ -116,6 +116,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .success {
+            background-color: #28a745;
+        }
+
+        .error {
+            background-color: red;
         }
 
         .notification.show {
@@ -154,15 +162,41 @@
     </div>
 </div>
 
-<!-- Thông báo -->
-<div id="notification" class="notification show">
-    <span>Đăng nhập thành công!</span>
-    <span class="close-btn" onclick="closeNotification()">×</span>
-</div>
+<c:choose>
+    <c:when test="${not empty message}">
+        <c:choose>
+            <c:when test="${message == 'loginSuccess'}">
+                <div id="loginSuccess" class="notification success show">
+                    <span>Đăng nhập thành công!</span>
+                    <span class="close-btn" onclick="closeNotification('loginSuccess')">×</span>
+                </div>
+            </c:when>
+            <c:when test="${message == 'loginError'}">
+                <div id="loginError" class="notification error show">
+                    <span>Đăng nhập thất bại!</span>
+                    <span class="close-btn" onclick="closeNotification('loginError')">×</span>
+                </div>
+            </c:when>
+            <c:when test="${message == 'permissionDenied'}">
+                <div id="permissionDenied" class="notification error show">
+                    <span>Bạn không có quyền truy cập vào tài nguyên!</span>
+                    <span class="close-btn" onclick="closeNotification('permissionDenied')">×</span>
+                </div>
+            </c:when>
+            <c:when test="${message == 'dontLogin'}">
+                <div id="dontLogin" class="notification error show">
+                    <span>Đăng nhập  truy cập tài nguyen!</span>
+                    <span class="close-btn" onclick="closeNotification('dontLogin')">×</span>
+                </div>
+            </c:when>
+        </c:choose>
+    </c:when>
+</c:choose>
+
 
 <script>
-    function closeNotification() {
-        var notification = document.getElementById("notification");
+    function closeNotification(id) {
+        var notification = document.getElementById(id);
         notification.classList.remove("show");
     }
 

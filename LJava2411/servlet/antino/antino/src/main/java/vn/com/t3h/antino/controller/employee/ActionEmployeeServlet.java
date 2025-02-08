@@ -15,7 +15,7 @@ import vn.com.t3h.antino.util.Constants;
 
 import java.io.IOException;
 
-@WebServlet("/action-employee")
+@WebServlet("/cms/action-employee")
 public class ActionEmployeeServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -45,6 +45,6 @@ public class ActionEmployeeServlet extends HttpServlet {
         }else {
             employeeService.saveEmployee(req);
         }
-        resp.sendRedirect("/employees");
+        resp.sendRedirect("/cms/employees");
     }
 }

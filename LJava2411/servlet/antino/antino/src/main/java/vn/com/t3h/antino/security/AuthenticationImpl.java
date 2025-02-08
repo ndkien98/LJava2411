@@ -33,10 +33,10 @@ public class AuthenticationImpl implements Authentication {
         if (userModel == null) {
             return "/login?message=loginError";
         } else {
-            SessionUtil.putValue(request, "USER", userModel);
+            SessionUtil.putValue(request, SessionUtil.SESSION_ID_CURRENT_USER, userModel);
             RoleModel roleModel = roleService.getRoleById(userModel.getRoleId());
             if (Constants.ROLE.ROLE_ADMIN.name().equalsIgnoreCase(roleModel.getCode())) {
-                return "/employees";
+                return "/cms/employees";
             } else if (Constants.ROLE.ROLE_USER.name().equalsIgnoreCase(roleModel.getCode())) {
                 return "/home";
             }

@@ -12,7 +12,10 @@
 </head>
 <body>
 <div class="container my-4">
-    <h1 class="text-center mb-4">Employee List</h1>
+    <div style="float: right">
+        <a href="${applicationScope.baseUrl}/logout">Đăng xuất</a>
+    </div>
+    <h1 class="text-center mb-4">Manager Employee</h1>
 
     <!-- Form tìm kiếm với các trường hiển thị ngang -->
     <form class="row g-3" action="employees" method="get">
@@ -49,7 +52,7 @@
     </form>
     <!-- Button thêm mới -->
     <div class="mt-3">
-        <form action="/action-employee" method="get">
+        <form action="/cms/action-employee" method="get">
             <button type="submit" class="btn btn-success">
                 <i class="fas fa-plus"></i> Add New
             </button>
@@ -79,10 +82,10 @@
                 <td>${employeeModel.departmentName}</td>
                 <td>${employeeModel.hireDate}</td>
                 <td>
-                    <a href="/action-employee?id=${employeeModel.employeeId}" class="btn btn-warning btn-sm">
+                    <a href="/cms/action-employee?id=${employeeModel.employeeId}" class="btn btn-warning btn-sm">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <form action="/action-employee?id=${employeeModel.employeeId}&deleted=true" method="post">
+                    <form action="/cms/action-employee?id=${employeeModel.employeeId}&deleted=true" method="post">
                         <button type="submit" class="btn btn-danger">
                             <i class="fas fa-trash-alt"></i>
                         </button>

@@ -5,6 +5,8 @@ import jakarta.servlet.http.HttpServletRequest;
 
 public class SessionUtil {
 
+    public static final String SESSION_ID_CURRENT_USER = "SESSION_ID_CURRENT_USER";
+
     public static void putValue(HttpServletRequest request, String key, Object value) {
         request.getSession().setAttribute(key, value);
     }

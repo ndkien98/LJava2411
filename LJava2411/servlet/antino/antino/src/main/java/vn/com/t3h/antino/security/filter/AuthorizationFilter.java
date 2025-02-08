@@ -31,7 +31,7 @@ public class AuthorizationFilter implements Filter {
         UserModel currentUser = (UserModel) request.getSession().getAttribute(SessionUtil.SESSION_ID_CURRENT_USER);
 
         String uri = request.getRequestURI();
-        if (uri.startsWith("/cms") || uri.contains("/employees")){
+        if (uri.startsWith("/cms")){
             if (currentUser != null){
                 RoleModel roleCurrentUser = roleService.getRoleById(currentUser.getRoleId());
                 if (roleCurrentUser != null && roleCurrentUser.getCode().equalsIgnoreCase(Constants.ROLE.ROLE_ADMIN.name())){

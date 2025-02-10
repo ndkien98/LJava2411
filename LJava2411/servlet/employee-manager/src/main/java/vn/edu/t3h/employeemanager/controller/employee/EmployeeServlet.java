@@ -15,7 +15,7 @@ import vn.edu.t3h.employeemanager.service.impl.EmployeeServiceImpl;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "EmployeeServlet",value = "/employee")
+@WebServlet(name = "EmployeeServlet",value = "/cms/employee")
 public class EmployeeServlet extends HttpServlet {
 
     private EmployeeService employeeService;
@@ -42,7 +42,7 @@ public class EmployeeServlet extends HttpServlet {
         String position = req.getParameter("position");
         List<Employee> employees = employeeService.findByFilter(name,salary,fromDate,toDate,position);
         req.setAttribute("employeeData",employees);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("employees.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/cms/employees.jsp");
         requestDispatcher.forward(req,resp);
     }
 

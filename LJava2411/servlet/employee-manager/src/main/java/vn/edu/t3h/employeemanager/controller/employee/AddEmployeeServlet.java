@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(value = "/action-employee")
+@WebServlet(value = "/cms/action-employee")
 public class AddEmployeeServlet extends HttpServlet {
 
     @Override

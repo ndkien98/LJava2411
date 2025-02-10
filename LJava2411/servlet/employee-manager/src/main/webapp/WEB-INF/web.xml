@@ -19,7 +19,7 @@
 <!--        đường dẫn ứng với servlet, khi truy cập vào đường dẫn localhost:8080/home-servlet =>
             => sẽ được xử lý bở HomeServlet có class trong vn.edu.t3h.employeemanager.controller.HomeServlet
 -->
-        <url-pattern>/home-servlet</url-pattern>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
 
 

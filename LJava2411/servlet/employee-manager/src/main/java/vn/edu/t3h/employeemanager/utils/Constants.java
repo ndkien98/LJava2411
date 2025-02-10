@@ -9,4 +9,7 @@ public class Constants {
     public static final String LOGIN_SUCCESS = "loginSuccess";
     public static final String LOGIN_ERROR = "loginError";
 
+    public static enum ROLE{
+        ROLE_ADMIN,ROLE_USER
+    }
 }

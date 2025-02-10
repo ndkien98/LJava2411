@@ -191,7 +191,15 @@
         <a href="#">Dịch Vụ</a>
         <a href="#">Liên Hệ</a>
     </div>
-    <div id="userInfo" class="user-info"></div>
+    <div id="userInfo" class="user-info">
+        <c:if test="${not empty username}">
+            <span>Xin chào ${username}</span>
+            <a href="/logout">Đăng xuất</a>
+        </c:if>
+        <c:if test="${empty username}">
+            <a href="/login">Đăng nhập</a>
+        </c:if>
+    </div>
 </div>
 
 <!-- Phần hero -->

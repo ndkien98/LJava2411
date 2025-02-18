@@ -7,7 +7,13 @@ import vn.com.t3h.antino.model.UserModel;
 import vn.com.t3h.antino.util.SessionUtil;
 
 import java.io.IOException;
-
+// Filter:
+/*
+bộ lọc bắt buộc tất cả request trước
+khi đến được class Servlet đều phải đi qua
+class Filter này trước
+- class customer bộ lọc theo ý mình
+ */
 public class CharacterEncodingFilter implements Filter {
 
     private String encoding = "UTF-8";

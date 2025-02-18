@@ -31,55 +31,74 @@
         <c:if test="${not empty model.employeeId}">
             <h2 class="mb-4 text-center">Edit Employee</h2>
         </c:if>
-        <form action="/cms/action-employee" method="POST">
+        <form action="/cms/action-employee" method="POST" enctype="multipart/form-data">
             <input type="text" class="form-control" id="employeeId" name="employeeId" hidden
-                   value="${model.employeeId}" required>
+                   value="${model.employeeId}">
+
+            <!-- Avatar Section -->
+            <div class="mb-3 text-center">
+                <label for="avatar" class="form-label">Employee Avatar</label>
+                <!-- Hiển thị ảnh đại diện nếu có, nếu không sẽ hiển thị ảnh mặc định -->
+                <c:if test="${not empty model.avatarUrl}">
+                    <img src="${model.avatarUrl}" alt="Employee Avatar" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+                </c:if>
+                <c:if test="${empty model.avatarUrl}">
+                    <img src="default-avatar.jpg" alt="Default Avatar" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+                </c:if>
+
+                <!-- Input file để thay đổi ảnh đại diện -->
+                <input type="file" class="form-control mt-2" id="avatar" name="avatar" accept="image/*">
+            </div>
+
+            <!-- Name -->
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
-                <!-- Hiển thị giá trị name từ model nếu có, nếu không sẽ để trống -->
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter employee name"
                        value="${model.name}" required>
             </div>
+
+            <!-- Position -->
             <div class="mb-3">
                 <label for="position" class="form-label">Position</label>
-                <!-- Hiển thị giá trị position từ model nếu có -->
                 <input type="text" class="form-control" id="position" name="position" placeholder="Enter position"
                        value="${model.position}" required>
             </div>
+
+            <!-- Salary -->
             <div class="mb-3">
                 <label for="salary" class="form-label">Salary</label>
-                <!-- Hiển thị giá trị salary từ model nếu có -->
                 <input type="number" class="form-control" id="salary" name="salary" placeholder="Enter salary"
-                       step="0.01" value="${model.salary}" required>
+                       value="${model.salary}" required>
             </div>
+
+            <!-- Email -->
             <div class="mb-3">
-                <label for="departmentName" class="form-label">Department</label>
-                <select class="form-select" id="departmentName" name="departmentName" required>
-                    <option value="">Select Department</option>
-                    <option value="1" ${model.departmentName == 'IT' ? 'selected' : ''}>IT</option>
-                    <option value="2" ${model.departmentName == 'HR' ? 'selected' : ''}>HR</option>
-                    <option value="3" ${model.departmentName == 'Finance' ? 'selected' : ''}>Finance</option>
-                    <option value="5" ${model.departmentName == 'AI' ? 'selected' : ''}>AI</option>
-                </select>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"
+                       value="${model.email}" required>
             </div>
+
+            <!-- Contact Number -->
             <div class="mb-3">
-                <label for="hireDate" class="form-label">Hire Date</label>
-                <!-- Hiển thị giá trị hire_date từ model nếu có -->
-                <input type="date" class="form-control" id="hireDate" name="hireDate"
-                       value="${model.hireDate}" required>
+                <label for="contactNumber" class="form-label">Contact Number</label>
+                <input type="text" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter contact number"
+                       value="${model.contactNumber}" required>
             </div>
-            <div class="d-grid">
-                <c:if test="${empty model.employeeId}">
-                    <button type="submit" class="btn btn-outline-primary">Add Employee</button>
-                </c:if>
-                <c:if test="${not empty model.employeeId}">
-                    <button type="submit" class="btn btn-outline-warning">Edit Employee</button>
-                </c:if>
+
+            <!-- Department -->
+            <div class="mb-3">
+                <label for="department" class="form-label">Department</label>
+                <input type="text" class="form-control" id="department" name="department" placeholder="Enter department"
+                       value="${model.department}" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>
     </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

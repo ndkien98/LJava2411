@@ -27,8 +27,8 @@ public class LoginServlet extends HttpServlet {
         String message = req.getParameter("message");
         req.getSession().setAttribute("message", message);
         if (req.getRequestURI().startsWith("/logout")) {
-            resp.sendRedirect("/home");
             SessionUtil.removeValue(req, SessionUtil.SESSION_ID_CURRENT_USER);
+            resp.sendRedirect("/home");
         } else {
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("login.jsp");
             requestDispatcher.forward(req, resp);

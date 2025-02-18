@@ -52,7 +52,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         // convert data từ param sang model class EmployeeModel
         EmployeeModel model = MapClientToSeverUtil.toModel(EmployeeModel.class,request);
         int numberRowExecute = 0;
-        if (model.getEmployeeId() != null){
+        if (model.getEmployeeId() != null && model.getEmployeeId() != 0){
             numberRowExecute = employeeDAO.updateEmployee(model);
         }else {
             numberRowExecute = employeeDAO.addEmployee(model);

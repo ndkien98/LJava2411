@@ -6,6 +6,7 @@
                            http://www.springframework.org/schema/context
                            https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="bookService" class="vn.com.t3h.service.impl.BookServiceImpl" />
     <!-- Cấu hình component-scan để Spring tìm kiếm các controller -->
     <context:component-scan base-package="vn.com.t3h.controller" />
 
@@ -14,4 +15,5 @@
         <property name="prefix" value="/WEB-INF/views/" />
         <property name="suffix" value=".jsp" />
     </bean>
+
 </beans>

@@ -9,41 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac62c889-8c70-4eef-9a44-e4bb58103b31" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hello.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/antino/antino/src/main/java/vn/com/t3h/antino/config/CharacterEncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../servlet/antino/antino/src/main/java/vn/com/t3h/antino/config/CharacterEncodingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/antino/antino/src/main/java/vn/com/t3h/antino/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../servlet/antino/antino/src/main/java/vn/com/t3h/antino/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/antino/antino/src/main/java/vn/com/t3h/antino/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../servlet/antino/antino/src/main/java/vn/com/t3h/antino/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/antino/antino/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../servlet/antino/antino/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/antino/antino/src/main/webapp/cms/add-employee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../servlet/antino/antino/src/main/webapp/cms/add-employee.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/classes/vn/edu/t3h/employeemanager/HelloServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/classes/vn/edu/t3h/employeemanager/controller/HomeServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/classes/vn/edu/t3h/employeemanager/controller/employee/AddEmployeeServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/classes/vn/edu/t3h/employeemanager/controller/employee/EmployeeServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/classes/vn/edu/t3h/employeemanager/dao/EmployeeDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/classes/vn/edu/t3h/employeemanager/dao/impl/EmployeeDaoMysqlImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/classes/vn/edu/t3h/employeemanager/dao/impl/EmployeeDaoOracleImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/classes/vn/edu/t3h/employeemanager/model/Employee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/classes/vn/edu/t3h/employeemanager/service/EmployeeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/classes/vn/edu/t3h/employeemanager/service/impl/EmployeeServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/lib/jakarta.el-api-5.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/lib/jakarta.servlet.jsp.jstl-2.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/lib/mysql-connector-java-8.0.29.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/lib/protobuf-java-3.19.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/mvc-parttern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/add-employee.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/employees.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/home-page.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../servlet/apache-tomcat-10.1.34-windows-x64/apache-tomcat-10.1.34/webapps/ROOT/index.jsp" afterDir="false" />
+    <list default="true" id="ac62c889-8c70-4eef-9a44-e4bb58103b31" name="Changes" comment="init project">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/BookRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/service/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,43 +26,51 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2tDSUjmHtTgz2YZqlOWJImPsgEl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.book-shop [clean].executor": "Run",
-    "Maven.book-shop [install].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 10.1.34.executor": "Debug",
-    "git-widget-placeholder": "develop2",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.book-shop [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.book-shop [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.34.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop2&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\T3h\LJava2411\github\LJava2411\LJava2411\spring-mvc\book-shop\book-shop\src\main\webapp\WEB-INF" />
@@ -201,11 +182,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1739885172174</updated>
-      <workItem from="1739885173409" duration="1243000" />
+      <workItem from="1739885173409" duration="3619000" />
+      <workItem from="1739968093250" duration="2149000" />
     </task>
+    <task id="LOCAL-00001" summary="init project">
+      <option name="closed" value="true" />
+      <created>1739889838473</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739889838473</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init project" />
+    <option name="LAST_COMMIT_MESSAGE" value="init project" />
   </component>
 </project>

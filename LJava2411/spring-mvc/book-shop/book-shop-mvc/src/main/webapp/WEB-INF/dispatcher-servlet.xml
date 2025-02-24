@@ -12,7 +12,6 @@
     <!-- Cấu hình component-scan để Spring tìm kiếm các controller-->
     <context:component-scan base-package="vn.com.t3h.controller" />
 
-
     <!-- Cấu hình view resolver để hiển thị JSP
      để chỉ định cho spring (InternalResourceViewResolver) biết các file view được đặt tại folder nào
      để khi trả ra tên file, (InternalResourceViewResolver) sẽ tự động tìm kiếm các file đó trong folder được chỉ định
@@ -23,4 +22,9 @@
 <!--        config đường dẫn file view sẽ kết thúc bằng -->
         <property name="suffix" value=".jsp" />
     </bean>
+
+    <mvc:resources mapping="/static/**" location="/static/" />
+
+    <!-- Đăng ký các mapping cho servlet -->
+    <mvc:annotation-driven />
 </beans>

@@ -185,7 +185,7 @@
             </c:when>
             <c:when test="${message == 'dontLogin'}">
                 <div id="dontLogin" class="notification error show">
-                    <span>Đăng nhập  truy cập tài nguyen!</span>
+                    <span>Đăng nhập để truy cập tài nguyên!</span>
                     <span class="close-btn" onclick="closeNotification('dontLogin')">×</span>
                 </div>
             </c:when>

@@ -5,28 +5,28 @@
   Time: 11:34 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="vi">
-<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Trang chủ</title>
 
-    <link href="${contextPath}/resource/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="../../resource/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
     <!-- Bootstrap v5.0.1 -->
-    <link href="${contextPath}/resource/css/bootstrap.css" type="text/css" rel="stylesheet">
-    <script src="${contextPath}/resource/js/bootstrap.bundle.js" type="text/javascript"></script>
+    <link href="../../resource/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <script src="../../resource/js/bootstrap.bundle.js" type="text/javascript"></script>
 
     <!-- Bootstrap Icons v1.5.0 -->
-    <link href="${contextPath}/resource/css/bootstrap-icons.css" type="text/css" rel="stylesheet">
+    <link href="../../resource/css/bootstrap-icons.css" type="text/css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link href="${contextPath}/resource/css/styles.css" type="text/css" rel="stylesheet">
+    <link href="../../resource/css/styles.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>

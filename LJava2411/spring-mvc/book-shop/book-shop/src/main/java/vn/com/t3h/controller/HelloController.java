@@ -8,6 +8,6 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String sayHello() {
-        return "hello"; // tên file JSP sẽ là hello.jsp
+        return "home"; // tên file JSP sẽ là hello.jsp
     }
 }

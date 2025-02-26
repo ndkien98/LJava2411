@@ -25,6 +25,18 @@ public class EmployeeServiceImpl implements EmployeeService {
         this.departmentDAO = departmentDAO;
     }
 
+    public static void main(String[] args) {
+        // khi khởi tạo bean
+        EmployeeDAO beanEmpDao = new EmployeeDAOImpl();
+        DepartmentDAO beanDeptDao = new DepartmentDaoImpl();
+        // sử dụng DI để tiêm bean vào trong bean EmployeeService
+        EmployeeService empService = new EmployeeServiceImpl(beanEmpDao,beanDeptDao);
+
+        // cả qua trình trên gọi là IOC, bản chất và IOC sử dụng DI để tạo ra được các bean
+        // sau khi tất cả các bean đã được khởi tạo => spring container bean sẽ quản lý các bean( object) đó
+
+    }
+
     @Override
     public List<EmployeeModel> getAllEmployees(String name, String salary, String fromDate, String toDate, String position) {
 

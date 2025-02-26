@@ -3,6 +3,8 @@ package vn.com.t3h.antino.dao.impl;
 
 import vn.com.t3h.antino.dao.EmployeeDAO;
 import vn.com.t3h.antino.model.EmployeeModel;
+import vn.com.t3h.antino.service.EmployeeService;
+import vn.com.t3h.antino.service.impl.EmployeeServiceImpl;
 import vn.com.t3h.antino.util.DatabaseConnection;
 
 import java.sql.*;
@@ -103,7 +105,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 pstmt.setString(10, position);
             }
 
-
+            /*
+            ORM: object relation mapping
+                auto convert data table sql -> class object java
+             */
             try (ResultSet rs = pstmt.executeQuery()) {
                 // Process the result set and map to EmployeeModel
                 while (rs.next()) {
@@ -126,6 +131,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
         return employees;
     }
+
+
 
     private static void closeConnection(Connection conn) {
         if (conn != null){

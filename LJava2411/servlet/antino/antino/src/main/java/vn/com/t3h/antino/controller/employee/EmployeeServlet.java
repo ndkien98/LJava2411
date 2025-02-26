@@ -20,11 +20,11 @@ import java.util.List;
 @WebServlet("/cms/employees")
 public class EmployeeServlet extends HttpServlet {
 
-    private final EmployeeService employeeService;
+    private EmployeeService employeeService;
 
-    public EmployeeServlet() {
-        employeeService = new EmployeeServiceImpl(new EmployeeDAOImpl(),new DepartmentDaoImpl());
-    }
+//    public EmployeeServlet() {
+//        employeeService = new EmployeeServiceImpl(new EmployeeDAOImpl(),new DepartmentDaoImpl());
+//    }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -9,8 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac62c889-8c70-4eef-9a44-e4bb58103b31" name="Changes" comment="init list all product">
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/config/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/config/DataSourceConfig.java" afterDir="false" />
+    <list default="true" id="ac62c889-8c70-4eef-9a44-e4bb58103b31" name="Changes" comment="config database with xml">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +189,7 @@
       <workItem from="1739968093250" duration="2679000" />
       <workItem from="1740371280436" duration="1856000" />
       <workItem from="1740484454575" duration="72000" />
-      <workItem from="1740579908545" duration="2190000" />
+      <workItem from="1740579908545" duration="2506000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -215,16 +215,36 @@
       <option name="project" value="LOCAL" />
       <updated>1740582048875</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="config database with xml">
+      <option name="closed" value="true" />
+      <created>1740582361998</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740582361999</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
     <MESSAGE value="init list all product" />
-    <option name="LAST_COMMIT_MESSAGE" value="init list all product" />
+    <MESSAGE value="config database with xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="config database with xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

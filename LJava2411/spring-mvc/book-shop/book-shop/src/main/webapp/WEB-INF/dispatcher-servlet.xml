@@ -9,9 +9,10 @@
 
     <bean id="bookService" class="vn.com.t3h.service.impl.ProductServiceImpl" />
     <!-- Cấu hình component-scan để Spring tìm kiếm các controller -->
-    <context:component-scan base-package="vn.com.t3h.controller" />
-    <context:component-scan base-package="vn.com.t3h.dao" />
-    <context:component-scan base-package="vn.com.t3h.config" />
+<!--    <context:component-scan base-package="vn.com.t3h.controller" />-->
+<!--    <context:component-scan base-package="vn.com.t3h.dao" />-->
+<!--    <context:component-scan base-package="vn.com.t3h.config" />-->
+    <context:component-scan base-package="vn.com.t3h" />
 
     <!-- Đọc thông tin từ file properties -->
     <context:property-placeholder location="classpath:database.properties"/>

@@ -15,10 +15,19 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
     private RoleDao roleDao;
 
+    public void setRoleDao(RoleDao roleDao) {
+        this.roleDao = roleDao;
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
     public UserServiceImpl(UserDao userDao,RoleDao roleDao) {
         this.userDao = userDao;
         this.roleDao = roleDao;
     }
+
 
     @Override
     public String login(String username, String password, HttpServletRequest request) {
@@ -43,4 +52,6 @@ public class UserServiceImpl implements UserService {
         }
         return urlRedirect;
     }
+
+
 }

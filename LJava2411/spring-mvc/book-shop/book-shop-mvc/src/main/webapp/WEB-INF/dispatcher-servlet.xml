@@ -10,7 +10,10 @@
 <!--    context:component-scan: cho spring biet cần quét các folder package nào để tạo bean-->
 <!--    tìm tất cả các class có annotation(@Controller, @Component,@Service,@Repository để tạo bean cho tất cả các class đó-->
     <!-- Cấu hình component-scan để Spring tìm kiếm các controller-->
-    <context:component-scan base-package="vn.com.t3h.controller" />
+<!--    <context:component-scan base-package="vn.com.t3h.controller" />-->
+<!--    <context:component-scan base-package="vn.com.t3h.service" />-->
+<!--    <context:component-scan base-package="vn.com.t3h.dao" />-->
+    <context:component-scan base-package="vn.com.t3h" />
 
     <!-- Cấu hình view resolver để hiển thị JSP
      để chỉ định cho spring (InternalResourceViewResolver) biết các file view được đặt tại folder nào
@@ -27,4 +30,23 @@
 
     <!-- Đăng ký các mapping cho servlet -->
     <mvc:annotation-driven />
+
+<!--    chỉ ra file lưu config database-->
+    <context:property-placeholder location="classpath:application.properties"/>
+<!--    config tạo ra bean của class DataSource, từ các thông tin database -->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+<!--    config tạo bean của JDBC Template-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+<!--    tạo bean cho class quản lý transaction-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
 </beans>

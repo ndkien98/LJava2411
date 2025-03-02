@@ -1,10 +1,10 @@
 package vn.com.t3h.service;
 
-import vn.com.t3h.model.Product;
+import vn.com.t3h.entity.ProductEntity;
 
 import java.util.List;
 
 public interface ProductService {
 
-    List<Product> findAll();
+    List<ProductEntity> findAll();
 }

@@ -6,8 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import vn.com.t3h.model.DataResource;
-import vn.com.t3h.model.Product;
+import vn.com.t3h.entity.ProductEntity;
 import vn.com.t3h.service.ProductService;
 
 import java.util.List;
@@ -20,15 +19,8 @@ public class ProductController {
 
     @GetMapping("/products")
     public String getAllProducts(Model model) {
-        List<Product> products = productService.findAll();
-        model.addAttribute("products", products);
+        List<ProductEntity> productEntities = productService.findAll();
+        model.addAttribute("products", productEntities);
         return "product-list";
-    }
-
-
-    public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        DataResource obj = (DataResource) context.getBean("dataResource");
-        obj.printConnection();
     }
 }

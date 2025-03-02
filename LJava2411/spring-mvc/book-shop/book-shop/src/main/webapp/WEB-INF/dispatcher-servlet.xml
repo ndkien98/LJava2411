@@ -5,32 +5,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
                            http://www.springframework.org/schema/context
-                           https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+                           https://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/mvc
+                           https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+    <!-- Bean cho ProductService -->
     <bean id="bookService" class="vn.com.t3h.service.impl.ProductServiceImpl" />
-    <!-- Cấu hình component-scan để Spring tìm kiếm các controller -->
-<!--    <context:component-scan base-package="vn.com.t3h.controller" />-->
-<!--    <context:component-scan base-package="vn.com.t3h.dao" />-->
-<!--    <context:component-scan base-package="vn.com.t3h.config" />-->
-    <context:component-scan base-package="vn.com.t3h" />
 
-    <!-- Đọc thông tin từ file properties -->
-    <context:property-placeholder location="classpath:database.properties"/>
-    <!-- Cấu hình DataSource sử dụng Apache DBCP -->
-    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-        <property name="driverClassName" value="${jdbc.driverClassName}"/>
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-    </bean>
-    <!-- Cấu hình JdbcTemplate -->
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-    <!-- Cấu hình PlatformTransactionManager -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
+    <!-- Quét các component trong package vn.com.t3h -->
+    <context:component-scan base-package="vn.com.t3h" />
 
     <!-- Cấu hình view resolver để hiển thị JSP -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -38,8 +21,12 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+    <!--    chỉ ra file lưu config database-->
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <!-- Định tuyến các tài nguyên tĩnh -->
     <mvc:resources mapping="/resource/**" location="/resource/" />
 
-    <!-- Đăng ký các mapping cho servlet -->
+    <!-- Kích hoạt khả năng xử lý annotation trong Spring MVC -->
     <mvc:annotation-driven />
 </beans>

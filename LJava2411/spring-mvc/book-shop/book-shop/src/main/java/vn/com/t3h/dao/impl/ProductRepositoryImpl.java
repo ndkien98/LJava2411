@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import vn.com.t3h.dao.ProductRepository;
-import vn.com.t3h.model.Product;
+import vn.com.t3h.entity.ProductEntity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,13 +19,13 @@ public class ProductRepositoryImpl implements ProductRepository {
     private JdbcTemplate jdbcTemplate;
 
     // Lấy tất cả sản phẩm
-    public List<Product> getAllProducts() {
+    public List<ProductEntity> getAllProducts() {
         String sql = "SELECT * FROM products";
         // Sử dụng RowMapper trực tiếp trong phương thức
-        return jdbcTemplate.query(sql, new RowMapper<Product>() {
+        return jdbcTemplate.query(sql, new RowMapper<ProductEntity>() {
             @Override
-            public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Product product = new Product();
+            public ProductEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
+                ProductEntity product = new ProductEntity();
 
                 product.setId(rs.getInt("id"));
                 product.setBookTitle(rs.getString("book_title"));
@@ -45,7 +45,7 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     // Thêm sản phẩm mới
-    public int addProduct(Product product) {
+    public int addProduct(ProductEntity product) {
         String sql = "INSERT INTO products (book_title, author, page_count, publisher, publication_year, " +
                 "genre, price, discount, stock_quantity, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         return jdbcTemplate.update(sql, product.getBookTitle(), product.getAuthor(), product.getPageCount(),
@@ -54,7 +54,7 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     // Cập nhật thông tin sản phẩm
-    public int updateProduct(Product product) {
+    public int updateProduct(ProductEntity product) {
         String sql = "UPDATE products SET book_title = ?, author = ?, page_count = ?, publisher = ?, " +
                 "publication_year = ?, genre = ?, price = ?, discount = ?, stock_quantity = ?, description = ? WHERE id = ?";
         return jdbcTemplate.update(sql, product.getBookTitle(), product.getAuthor(), product.getPageCount(),

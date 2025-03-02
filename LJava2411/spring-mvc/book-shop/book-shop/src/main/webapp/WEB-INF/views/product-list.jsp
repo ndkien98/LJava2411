@@ -31,22 +31,22 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="product" items="${products}">
+    <c:forEach var="productEntity" items="${productEntities}">
         <tr>
-            <td>${product.id}</td>
-            <td>${product.bookTitle}</td>
-            <td>${product.author}</td>
-            <td>${product.pageCount}</td>
-            <td>${product.publisher}</td>
-            <td>${product.publicationYear}</td>
-            <td>${product.genre}</td>
-            <td>${product.price}</td>
-            <td>${product.discount}</td>
-            <td>${product.stockQuantity}</td>
+            <td>${productEntity.id}</td>
+            <td>${productEntity.bookTitle}</td>
+            <td>${productEntity.author}</td>
+            <td>${productEntity.pageCount}</td>
+            <td>${productEntity.publisher}</td>
+            <td>${productEntity.publicationYear}</td>
+            <td>${productEntity.genre}</td>
+            <td>${productEntity.price}</td>
+            <td>${productEntity.discount}</td>
+            <td>${productEntity.stockQuantity}</td>
             <td>
-                <a href="view?id=${product.id}">View</a> |
-                <a href="edit?id=${product.id}">Edit</a> |
-                <a href="delete?id=${product.id}">Delete</a>
+                <a href="view?id=${productEntity.id}">View</a> |
+                <a href="edit?id=${productEntity.id}">Edit</a> |
+                <a href="delete?id=${productEntity.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>

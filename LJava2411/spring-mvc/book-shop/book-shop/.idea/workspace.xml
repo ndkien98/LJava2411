@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac62c889-8c70-4eef-9a44-e4bb58103b31" name="Changes" comment="config database with xml">
+    <list default="true" id="ac62c889-8c70-4eef-9a44-e4bb58103b31" name="Changes" comment="change config bean">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/model/DataResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/config/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/config/DataSourceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,29 +54,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.book-shop [clean].executor": "Run",
-    "Maven.book-shop [install].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 10.1.34.executor": "Debug",
-    "git-widget-placeholder": "develop2",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/T3h/LJava2411/github/LJava2411/LJava2411/spring-mvc/book-shop/book-shop/src/main/webapp/resource",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.book-shop [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.book-shop [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.34.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop2&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/T3h/LJava2411/github/LJava2411/LJava2411/spring-mvc/book-shop/book-shop/src/main/webapp/resource&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\T3h\LJava2411\github\LJava2411\LJava2411\spring-mvc\book-shop\book-shop\src\main\webapp\resource" />
@@ -189,7 +195,8 @@
       <workItem from="1739968093250" duration="2679000" />
       <workItem from="1740371280436" duration="1856000" />
       <workItem from="1740484454575" duration="72000" />
-      <workItem from="1740579908545" duration="2506000" />
+      <workItem from="1740579908545" duration="7262000" />
+      <workItem from="1740662249967" duration="3351000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -223,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740582361999</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="change config bean">
+      <option name="closed" value="true" />
+      <created>1740582457207</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740582457207</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +259,8 @@
     <MESSAGE value="init project" />
     <MESSAGE value="init list all product" />
     <MESSAGE value="config database with xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="config database with xml" />
+    <MESSAGE value="change config bean" />
+    <option name="LAST_COMMIT_MESSAGE" value="change config bean" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

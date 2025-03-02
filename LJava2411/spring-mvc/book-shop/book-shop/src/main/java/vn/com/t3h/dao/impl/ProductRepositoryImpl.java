@@ -46,7 +46,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     // Thêm sản phẩm mới
     public int addProduct(Product product) {
-        String sql = "INSERT INTO products (book_title, author, page_count, publisher, publication_year, genre, price, discount, stock_quantity, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO products (book_title, author, page_count, publisher, publication_year, " +
+                "genre, price, discount, stock_quantity, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         return jdbcTemplate.update(sql, product.getBookTitle(), product.getAuthor(), product.getPageCount(),
                 product.getPublisher(), product.getPublicationYear(), product.getGenre(), product.getPrice(),
                 product.getDiscount(), product.getStockQuantity(), product.getDescription());
@@ -54,7 +55,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     // Cập nhật thông tin sản phẩm
     public int updateProduct(Product product) {
-        String sql = "UPDATE products SET book_title = ?, author = ?, page_count = ?, publisher = ?, publication_year = ?, genre = ?, price = ?, discount = ?, stock_quantity = ?, description = ? WHERE id = ?";
+        String sql = "UPDATE products SET book_title = ?, author = ?, page_count = ?, publisher = ?, " +
+                "publication_year = ?, genre = ?, price = ?, discount = ?, stock_quantity = ?, description = ? WHERE id = ?";
         return jdbcTemplate.update(sql, product.getBookTitle(), product.getAuthor(), product.getPageCount(),
                 product.getPublisher(), product.getPublicationYear(), product.getGenre(), product.getPrice(),
                 product.getDiscount(), product.getStockQuantity(), product.getDescription(), product.getId());

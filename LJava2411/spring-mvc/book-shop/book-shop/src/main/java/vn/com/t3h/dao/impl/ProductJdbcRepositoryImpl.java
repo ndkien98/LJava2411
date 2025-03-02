@@ -6,9 +6,11 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import vn.com.t3h.dao.ProductRepository;
 import vn.com.t3h.entity.ProductEntity;
+import vn.com.t3h.model.ProductDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository("productJdbcRepositoryImpl")
@@ -41,6 +43,11 @@ public class ProductJdbcRepositoryImpl implements ProductRepository {
                 return product;
             }
         });
+    }
+
+    @Override
+    public List<ProductDTO> searchProducts(Double price, String bookTitle, String publisher, String categoryName) {
+        return new ArrayList<>();
     }
 
     // Thêm sản phẩm mới

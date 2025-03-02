@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import vn.com.t3h.dao.ProductRepository;
 import vn.com.t3h.entity.ProductEntity;
+import vn.com.t3h.model.ProductDTO;
 import vn.com.t3h.service.ProductService;
 
 import java.util.List;
@@ -19,5 +20,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductEntity> findAll() {
         return productRepository.getAllProducts();
+    }
+
+    @Override
+    public List<ProductDTO> searchProducts(Double price, String bookTitle, String publisher, String categoryName) {
+        return productRepository.searchProducts(price, bookTitle, publisher, categoryName);
     }
 }

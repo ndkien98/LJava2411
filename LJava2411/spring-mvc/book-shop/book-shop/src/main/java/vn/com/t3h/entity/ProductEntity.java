@@ -8,11 +8,14 @@ public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
 
-    @Column(name = "book_title")
+    @Column(name = "book_title", nullable = false)
     private String bookTitle;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "category_id")
+    private CategoryEntity category; // Mỗi sản phẩm có một thể loại
 
     @Column(name = "author")
     private String author;
@@ -44,9 +47,6 @@ public class ProductEntity {
     @Column(name = "image")
     private String image;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private CategoryEntity category; // Mỗi sản phẩm có một thể loại
 
     // Getter and Setter methods
     public int getId() {

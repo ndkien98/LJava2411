@@ -11,11 +11,8 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "username", unique = true, nullable = false)
-    private String username;
-
-    @Column(name = "password", nullable = false)
-    private String password;
+    @OneToOne(mappedBy = "user")
+    private IdentityCardEntity identityCard;
 
     @ManyToMany
     @JoinTable(
@@ -25,8 +22,11 @@ public class UserEntity {
     )
     private Set<RoleEntity> roles = new HashSet<>();
 
-    @OneToOne(mappedBy = "user")
-    private IdentityCardEntity identityCard;
+    @Column(name = "username", unique = true, nullable = false)
+    private String username;
+
+    @Column(name = "password", nullable = false)
+    private String password;
 
     // Constructors, getters, and setters
     public UserEntity() {}

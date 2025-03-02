@@ -13,14 +13,16 @@ public class CategoryEntity {
     @Column(name = "id")
     private int id;
 
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private Set<ProductEntity> products;  // danh sách sdản phẩm thuộc thể loại này
+
     @Column(name = "category_name")
     private String categoryName;
 
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
-    private Set<ProductEntity> products;  // Sản phẩm thuộc thể loại này
+
 
     // Getter and Setter methods
     public int getId() {

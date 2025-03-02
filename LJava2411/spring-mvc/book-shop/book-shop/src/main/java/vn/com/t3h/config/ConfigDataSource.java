@@ -29,6 +29,15 @@ public class ConfigDataSource {
     private String username;
     @Value("${spring.datasource.password}")
     private String password;
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName(driverClassName);
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+        return dataSource;
+    }
 
     @Value("${spring.jpa.database-platform}")
     private String databasePlatform;
@@ -42,15 +51,6 @@ public class ConfigDataSource {
     @Value("${spring.jpa.properties.hibernate.format_sql}")
     private String formatSql;
 
-    @Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(driverClassName);
-        dataSource.setUrl(url);
-        dataSource.setUsername(username);
-        dataSource.setPassword(password);
-        return dataSource;
-    }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {

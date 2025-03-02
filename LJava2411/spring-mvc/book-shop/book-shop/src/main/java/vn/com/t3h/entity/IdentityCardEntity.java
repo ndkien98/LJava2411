@@ -10,6 +10,10 @@ public class IdentityCardEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne
+    @JoinColumn(name = "user_id", unique = true, nullable = false)
+    private UserEntity user;
+
     @Column(name = "identity_number", unique = true, nullable = false)
     private String identityNumber;
 
@@ -21,10 +25,6 @@ public class IdentityCardEntity {
 
     @Column(name = "address", nullable = false)
     private String address;
-
-    @OneToOne
-    @JoinColumn(name = "user_id", unique = true, nullable = false)
-    private UserEntity user;
 
     // Constructors, getters, and setters
     public IdentityCardEntity() {}

@@ -9,26 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac62c889-8c70-4eef-9a44-e4bb58103b31" name="Changes" comment="spring mvc abd jdbc template">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/config/HibernateConfigDataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/entity/CategoryEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/entity/IdentityCardEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/entity/RoleEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/entity/UserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="ac62c889-8c70-4eef-9a44-e4bb58103b31" name="Changes" comment="config data source orm">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductHibernateRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/config/DataSourceConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/config/ConfigDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/config/ConfigDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/model/DataResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/entity/ProductEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductJdbcRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product-list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -210,7 +197,7 @@
       <workItem from="1740484454575" duration="72000" />
       <workItem from="1740579908545" duration="7262000" />
       <workItem from="1740662249967" duration="3351000" />
-      <workItem from="1740901096346" duration="5605000" />
+      <workItem from="1740901096346" duration="7447000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -260,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740901307820</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="config data source orm">
+      <option name="closed" value="true" />
+      <created>1740907096665</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1740907096665</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +278,8 @@
     <MESSAGE value="config database with xml" />
     <MESSAGE value="change config bean" />
     <MESSAGE value="spring mvc abd jdbc template" />
-    <option name="LAST_COMMIT_MESSAGE" value="spring mvc abd jdbc template" />
+    <MESSAGE value="config data source orm" />
+    <option name="LAST_COMMIT_MESSAGE" value="config data source orm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -292,6 +288,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/HelloController.java</url>
           <line>10</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductHibernateRepositoryImpl.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -31,7 +31,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="productEntity" items="${productEntities}">
+    <c:forEach var="productEntity" items="${products}">
         <tr>
             <td>${productEntity.id}</td>
             <td>${productEntity.bookTitle}</td>

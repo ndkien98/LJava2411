@@ -1,10 +1,11 @@
 package vn.com.t3h.config;
 
-import javax.persistence.EntityManagerFactory;  // Sử dụng javax.persistence
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,15 +13,12 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.Properties;
 
-@EnableWebMvc
-@EnableTransactionManagement
 @Configuration
 @PropertySource("classpath:application.properties")
+@ComponentScan(basePackages = "vn.com.t3h")
 public class ConfigDataSource {
 
     @Value("${spring.datasource.driver-class-name}")
@@ -58,7 +56,7 @@ public class ConfigDataSource {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource);
-        factoryBean.setPackagesToScan("vn.com.t3h.entity");  // Chỉ rõ package chứa các entity
+        factoryBean.setPackagesToScan("vn.com.t3h.entity");
         factoryBean.setJpaProperties(hibernateProperties());
         factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         return factoryBean;
@@ -66,10 +64,10 @@ public class ConfigDataSource {
 
     private Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.put("hibernate.dialect", databasePlatform);  // Cấu hình dialect từ application.properties
-        properties.put("hibernate.hbm2ddl.auto", ddlAuto);  // Tự động tạo bảng
-        properties.put("hibernate.show_sql", showSql);  // Hiển thị SQL
-        properties.put("hibernate.format_sql", formatSql);  // Định dạng SQL
+        properties.put("hibernate.dialect", databasePlatform);
+        properties.put("hibernate.hbm2ddl.auto", ddlAuto);
+        properties.put("hibernate.show_sql", showSql);
+        properties.put("hibernate.format_sql", formatSql);
         return properties;
     }
 

@@ -1,6 +1,7 @@
 package vn.com.t3h.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import vn.com.t3h.dao.ProductRepository;
 import vn.com.t3h.entity.ProductEntity;
@@ -11,8 +12,8 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-
     @Autowired
+    @Qualifier("productHibernateRepositoryImpl")
     private ProductRepository productRepository;
 
     @Override

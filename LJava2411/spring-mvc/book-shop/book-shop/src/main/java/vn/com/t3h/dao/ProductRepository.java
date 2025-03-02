@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ProductRepository {
 
-    public List<ProductEntity> getAllProducts();
+    List<ProductEntity> getAllProducts();
 }

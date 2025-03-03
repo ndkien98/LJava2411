@@ -2,23 +2,40 @@ package vn.com.t3h.model;
 
 public class ProductDTO {
 
-    private int id;
+    private Integer id;
     private String bookTitle;
     private String author;
-    private int pageCount;
+    private Integer pageCount;
     private String publisher;
-    private int publicationYear;
+    private Integer publicationYear;
     private String genre;
     private double price;
     private double discount;
-    private int stockQuantity;
+    private Integer stockQuantity;
     private String description;
 
-    public int getId() {
+    public ProductDTO() {
+    }
+
+    public ProductDTO(Integer id, String bookTitle, String author, Integer pageCount, String publisher, Integer publicationYear, String genre, double price, double discount, Integer stockQuantity, String description) {
+        this.id = id;
+        this.bookTitle = bookTitle;
+        this.author = author;
+        this.pageCount = pageCount;
+        this.publisher = publisher;
+        this.publicationYear = publicationYear;
+        this.genre = genre;
+        this.price = price;
+        this.discount = discount;
+        this.stockQuantity = stockQuantity;
+        this.description = description;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -38,11 +55,11 @@ public class ProductDTO {
         this.author = author;
     }
 
-    public int getPageCount() {
+    public Integer getPageCount() {
         return pageCount;
     }
 
-    public void setPageCount(int pageCount) {
+    public void setPageCount(Integer pageCount) {
         this.pageCount = pageCount;
     }
 
@@ -54,11 +71,11 @@ public class ProductDTO {
         this.publisher = publisher;
     }
 
-    public int getPublicationYear() {
+    public Integer getPublicationYear() {
         return publicationYear;
     }
 
-    public void setPublicationYear(int publicationYear) {
+    public void setPublicationYear(Integer publicationYear) {
         this.publicationYear = publicationYear;
     }
 
@@ -86,11 +103,11 @@ public class ProductDTO {
         this.discount = discount;
     }
 
-    public int getStockQuantity() {
+    public Integer getStockQuantity() {
         return stockQuantity;
     }
 
-    public void setStockQuantity(int stockQuantity) {
+    public void setStockQuantity(Integer stockQuantity) {
         this.stockQuantity = stockQuantity;
     }
 

@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 7390
-  Date: 2/27/2025
-  Time: 8:34 PM
+  Date: 2/26/2025
+  Time: 9:53 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -31,22 +31,22 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="productDTO" items="${productDTOS}">
+    <c:forEach var="productEntity" items="${products}">
         <tr>
-            <td>${productDTO.id}</td>
-            <td>${productDTO.bookTitle}</td>
-            <td>${productDTO.author}</td>
-            <td>${productDTO.pageCount}</td>
-            <td>${productDTO.publisher}</td>
-            <td>${productDTO.publicationYear}</td>
-            <td>${productDTO.genre}</td>
-            <td>${productDTO.price}</td>
-            <td>${productDTO.discount}</td>
-            <td>${productDTO.stockQuantity}</td>
+            <td>${productEntity.id}</td>
+            <td>${productEntity.bookTitle}</td>
+            <td>${productEntity.author}</td>
+            <td>${productEntity.pageCount}</td>
+            <td>${productEntity.publisher}</td>
+            <td>${productEntity.publicationYear}</td>
+            <td>${productEntity.genre}</td>
+            <td>${productEntity.price}</td>
+            <td>${productEntity.discount}</td>
+            <td>${productEntity.stockQuantity}</td>
             <td>
-                <a href="view?id=${productDTO.id}">View</a> |
-                <a href="edit?id=${productDTO.id}">Edit</a> |
-                <a href="delete?id=${productDTO.id}">Delete</a>
+                <a href="view?id=${productEntity.id}">View</a> |
+                <a href="edit?id=${productEntity.id}">Edit</a> |
+                <a href="delete?id=${productEntity.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>

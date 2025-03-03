@@ -5,7 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import vn.com.t3h.dao.ProductDao;
-import vn.com.t3h.model.Product;
+import vn.com.t3h.model.ProductDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,28 +18,28 @@ public class ProductDaoImpl implements ProductDao {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public List<Product> findAll() {
+    public List<ProductDTO> findAll() {
         String sql = "select * from products";
-        List<Product> products = jdbcTemplate.query(sql,new RowMapper<Product>(){
+        List<ProductDTO> productDTOS = jdbcTemplate.query(sql,new RowMapper<ProductDTO>(){
             @Override
-            public Product mapRow(ResultSet rs, int i) throws SQLException {
+            public ProductDTO mapRow(ResultSet rs, int i) throws SQLException {
                 System.out.println("Bắt đầu map dữ liệu dạng sql sang object java của sản phẩm thứ: " + i);
-                Product product = new Product();
-                product.setId(rs.getInt("id"));
-                product.setId(rs.getInt("id"));
-                product.setBookTitle(rs.getString("book_title"));
-                product.setAuthor(rs.getString("author"));
-                product.setPageCount(rs.getInt("page_count"));
-                product.setPublisher(rs.getString("publisher"));
-                product.setPublicationYear(rs.getInt("publication_year"));
-                product.setGenre(rs.getString("genre"));
-                product.setPrice(rs.getDouble("price"));
-                product.setDiscount(rs.getDouble("discount"));
-                product.setStockQuantity(rs.getInt("stock_quantity"));
-                product.setDescription(rs.getString("description"));
-                return product;
+                ProductDTO productDTO = new ProductDTO();
+                productDTO.setId(rs.getInt("id"));
+                productDTO.setId(rs.getInt("id"));
+                productDTO.setBookTitle(rs.getString("book_title"));
+                productDTO.setAuthor(rs.getString("author"));
+                productDTO.setPageCount(rs.getInt("page_count"));
+                productDTO.setPublisher(rs.getString("publisher"));
+                productDTO.setPublicationYear(rs.getInt("publication_year"));
+                productDTO.setGenre(rs.getString("genre"));
+                productDTO.setPrice(rs.getDouble("price"));
+                productDTO.setDiscount(rs.getDouble("discount"));
+                productDTO.setStockQuantity(rs.getInt("stock_quantity"));
+                productDTO.setDescription(rs.getString("description"));
+                return productDTO;
             }
         });
-        return products;
+        return productDTOS;
     }
 }

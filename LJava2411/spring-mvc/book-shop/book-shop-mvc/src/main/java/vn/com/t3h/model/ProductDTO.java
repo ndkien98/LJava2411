@@ -1,6 +1,6 @@
 package vn.com.t3h.model;
 
-public class Product {
+public class ProductDTO {
 
     private int id;
     private String bookTitle;

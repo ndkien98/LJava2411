@@ -5,7 +5,7 @@ Tính S(n) = 1^3 + 2^3 + 3^3 + … + n^3  n nhập từ bàn phím
 Nhập n từ bàn phím (n dương, bắt nhập lại nếu n âm)
 và in ra màn hình dãy S(n)
 
- bai 2) Viết lại chữ số đảo ngược
+bai 2) Viết lại chữ số đảo ngược
  Ví dụ nhập vào số 1357 thì in ra số đảo ngược là 7531
  (Không sử dụng nhập vào chuỗi số là String)
 

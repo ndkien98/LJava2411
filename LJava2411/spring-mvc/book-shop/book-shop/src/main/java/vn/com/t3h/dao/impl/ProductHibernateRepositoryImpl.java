@@ -148,15 +148,19 @@ public class ProductHibernateRepositoryImpl implements ProductRepository {
         }
     }
 
-    public void saveProduct(ProductEntity product) {
+    public Integer saveProduct(ProductEntity product) {
         // Mở Session
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
+        Integer productId = null;
+
         try {
             // Bắt đầu giao dịch
             transaction = session.beginTransaction();
-            // Thực hiện thao tác với cơ sở dữ liệu
-            session.save(product);
+
+            // Lưu sản phẩm và lấy id
+            productId = (Integer) session.save(product); // Lưu và lấy id của sản phẩm
+
             // Cam kết giao dịch
             transaction.commit();
         } catch (Exception e) {
@@ -169,7 +173,11 @@ public class ProductHibernateRepositoryImpl implements ProductRepository {
             // Đảm bảo đóng session
             session.close();
         }
+
+        // Trả về id của sản phẩm đã được lưu
+        return productId;
     }
+
 
 
 

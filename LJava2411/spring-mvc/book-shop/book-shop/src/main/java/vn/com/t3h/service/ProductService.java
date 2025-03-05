@@ -10,4 +10,6 @@ public interface ProductService {
     List<ProductEntity> findAll();
 
     public List<ProductDTO> searchProducts(Double price, String bookTitle, String publisher, String categoryName);
+
+    public ProductDTO addProduct(ProductDTO productDto);
 }

@@ -36,7 +36,6 @@
             <version>2.18.2</version>
         </dependency>
 
-
         <!-- Jakarta Servlet JSTL -->
         <dependency>
             <groupId>org.glassfish.web</groupId>

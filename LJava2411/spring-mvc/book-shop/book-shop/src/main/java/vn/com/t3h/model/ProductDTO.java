@@ -2,7 +2,7 @@ package vn.com.t3h.model;
 
 public class ProductDTO {
 
-    private int id;
+    private Integer id;
     private String bookTitle;
     private String author;
     private double price;
@@ -19,7 +19,7 @@ public class ProductDTO {
 
     }
     // Constructor
-    public ProductDTO(int id, String bookTitle, String author, double price, String publisher, int pageCount,
+    public ProductDTO(Integer id, String bookTitle, String author, double price, String publisher, int pageCount,
                       int publicationYear, String genre, double discount, int stockQuantity,
                       String description, String categoryName) {
         this.id = id;
@@ -37,11 +37,11 @@ public class ProductDTO {
     }
 
     // Getter and Setter methods for all fields
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

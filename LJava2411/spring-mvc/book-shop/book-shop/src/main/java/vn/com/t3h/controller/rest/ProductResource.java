@@ -2,10 +2,7 @@ package vn.com.t3h.controller.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import vn.com.t3h.model.ProductDTO;
 import vn.com.t3h.service.ProductService;
 
@@ -34,4 +31,19 @@ public class ProductResource {
         List<ProductDTO> products = productService.searchProducts(price, bookTitle, publisher, categoryName);
         return ResponseEntity.ok(products);
     }
+
+    @PostMapping("/create")
+    public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO product) {
+        ProductDTO productDTO = productService.addProduct(product);
+        return ResponseEntity.ok(productDTO);
+    }
+
+    @GetMapping("/products/{id}")
+    public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id) {
+        // Tìm sản phẩm theo ID
+//        ProductDTO product = productService.getProductById(id);
+//        return ResponseEntity.ok(product);
+        return null;
+    }
+
 }

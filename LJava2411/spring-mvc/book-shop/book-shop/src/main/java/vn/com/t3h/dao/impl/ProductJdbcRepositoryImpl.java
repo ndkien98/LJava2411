@@ -50,6 +50,11 @@ public class ProductJdbcRepositoryImpl implements ProductRepository {
         return new ArrayList<>();
     }
 
+    @Override
+    public Integer saveProduct(ProductEntity product) {
+        return 0;
+    }
+
     // Thêm sản phẩm mới
     public int addProduct(ProductEntity product) {
         String sql = "INSERT INTO products (book_title, author, page_count, publisher, publication_year, " +

@@ -8,7 +8,7 @@ public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "book_title", nullable = false)
     private String bookTitle;
@@ -21,13 +21,13 @@ public class ProductEntity {
     private String author;
 
     @Column(name = "page_count")
-    private int pageCount;
+    private Integer pageCount;
 
     @Column(name = "publisher")
     private String publisher;
 
     @Column(name = "publication_year")
-    private int publicationYear;
+    private Integer publicationYear;
 
     @Column(name = "genre")
     private String genre;
@@ -39,7 +39,7 @@ public class ProductEntity {
     private double discount;
 
     @Column(name = "stock_quantity")
-    private int stockQuantity;
+    private Integer stockQuantity;
 
     @Column(name = "description")
     private String description;
@@ -49,11 +49,11 @@ public class ProductEntity {
 
 
     // Getter and Setter methods
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -73,11 +73,11 @@ public class ProductEntity {
         this.author = author;
     }
 
-    public int getPageCount() {
+    public Integer getPageCount() {
         return pageCount;
     }
 
-    public void setPageCount(int pageCount) {
+    public void setPageCount(Integer pageCount) {
         this.pageCount = pageCount;
     }
 
@@ -89,11 +89,11 @@ public class ProductEntity {
         this.publisher = publisher;
     }
 
-    public int getPublicationYear() {
+    public Integer getPublicationYear() {
         return publicationYear;
     }
 
-    public void setPublicationYear(int publicationYear) {
+    public void setPublicationYear(Integer publicationYear) {
         this.publicationYear = publicationYear;
     }
 
@@ -121,11 +121,11 @@ public class ProductEntity {
         this.discount = discount;
     }
 
-    public int getStockQuantity() {
+    public Integer getStockQuantity() {
         return stockQuantity;
     }
 
-    public void setStockQuantity(int stockQuantity) {
+    public void setStockQuantity(Integer stockQuantity) {
         this.stockQuantity = stockQuantity;
     }
 

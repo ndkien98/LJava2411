@@ -20,7 +20,7 @@ import java.util.List;
         hibernate, hql, entity user
  Bài 2:
     từ api lấy danh sách user, sửa api đó thành api cho phép tìm kiếm user theo các tiêu chí sau
-    - username hoặc full_name
+    - username hoặc full_name , truyền dữ liệu theo kiểu param
     - gợi ý: join với bảng identity_cards để tìm kiếm theo ful name, sử dụng entity để join
 
  */

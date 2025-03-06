@@ -11,7 +11,19 @@ import vn.com.t3h.model.ProductDTO;
 import vn.com.t3h.service.ProductService;
 
 import java.util.List;
+/**
+ Bài tập 1:
+    viết api lấy danh sách các thông tin của user với các yêu cầu
+    url: localhost:8080/api/users
+    method: GET
+    công nghệ sử dụng:
+        hibernate, hql, entity user
+ Bài 2:
+    từ api lấy danh sách user, sửa api đó thành api cho phép tìm kiếm user theo các tiêu chí sau
+    - username hoặc full_name
+    - gợi ý: join với bảng identity_cards để tìm kiếm theo ful name, sử dụng entity để join
 
+ */
 @RestController
 @RequestMapping("/api/products")
 public class ProductResource {

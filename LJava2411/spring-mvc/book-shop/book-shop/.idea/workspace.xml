@@ -10,18 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac62c889-8c70-4eef-9a44-e4bb58103b31" name="Changes" comment="demo hibernate">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/CategoryRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/rest/ProductResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/rest/ProductResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductHibernateRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductHibernateRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductJdbcRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/dao/impl/ProductJdbcRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/model/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/model/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +80,10 @@
       <recent name="D:\T3h\LJava2411\github\LJava2411\LJava2411\spring-mvc\book-shop\book-shop\src\main\webapp\WEB-INF\views" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.34">
+    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="5" requestIdentifier="#5" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 10.1.34" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.34" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -179,6 +171,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #5" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -207,6 +204,10 @@
       <workItem from="1741075177784" duration="397000" />
       <workItem from="1741088724283" duration="836000" />
       <workItem from="1741184869442" duration="2392000" />
+      <workItem from="1741265901046" duration="1428000" />
+      <workItem from="1741270048223" duration="1249000" />
+      <workItem from="1741338253451" duration="692000" />
+      <workItem from="1742213061567" duration="3313000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -329,6 +330,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/ProductController.java</url>
           <line>22</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/rest/ProductResource.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

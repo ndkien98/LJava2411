@@ -1,13 +1,21 @@
 package vn.com.t3h.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import vn.com.t3h.entity.ClaimEntity;
 import vn.com.t3h.mapper.ClaimMapper;
 import vn.com.t3h.repository.ClaimRepository;
 import vn.com.t3h.service.ClaimService;
 import vn.com.t3h.service.dto.ClaimDTO;
+import vn.com.t3h.service.dto.response.BaseResponse;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,9 +34,19 @@ public class ClaimServiceImpl implements ClaimService {
     }
 
     @Override
-    public List<ClaimDTO> getClaims() {
+    public BaseResponse<List<ClaimDTO>> getClaims(String claimCode,
+                                  LocalDate fromDate,
+                                  LocalDate toDate,
+                                  String codeStatus,
+                                  Pageable pageable) {
         // 5 result entity class
-        List<ClaimEntity> claimEntities = claimRepository.findAll();
+        if (StringUtils.isEmpty(claimCode)){
+            claimCode = null;
+        }
+        if (StringUtils.isEmpty(codeStatus)){
+            codeStatus = null;
+        }
+        Page<ClaimEntity> pageEntity = claimRepository.findCondition(claimCode,fromDate,toDate,codeStatus,pageable);
         // convert data entity -> dto
         List<ClaimDTO> claimDTOs = new ArrayList<ClaimDTO>();
 /*
@@ -44,7 +62,15 @@ public class ClaimServiceImpl implements ClaimService {
             claimDTOs.add(claimDTO);
         }
  */
-        claimDTOs = claimEntities.stream().map(entity -> claimMapper.toDto(entity)).collect(Collectors.toList());
-        return claimDTOs;
+        claimDTOs = pageEntity.map(entity -> claimMapper.toDto(entity)).stream().toList();
+        BaseResponse<List<ClaimDTO>> response = new BaseResponse<>();
+        response.setData(claimDTOs);
+        response.setMessage("Success");
+        response.setCode(HttpStatus.OK.value()); // 200
+        response.setTotalElement(pageEntity.getTotalElements());
+        response.setTotalPage(pageEntity.getTotalPages());
+        response.setPageSize(pageable.getPageSize());
+        response.setPageIndex(pageable.getPageNumber());
+        return response;
     }
 }

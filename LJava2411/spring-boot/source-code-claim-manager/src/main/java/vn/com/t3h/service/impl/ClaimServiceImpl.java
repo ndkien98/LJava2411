@@ -18,8 +18,12 @@ public class ClaimServiceImpl implements ClaimService {
     @Autowired
     private ClaimRepository claimRepository;
 
+    private final ClaimMapper claimMapper;
+
     @Autowired
-    private ClaimMapper claimMapper;
+    public ClaimServiceImpl(ClaimMapper claimMapper) {
+        this.claimMapper = claimMapper;
+    }
 
     @Override
     public List<ClaimDTO> getClaims() {

@@ -31,23 +31,13 @@
             <div class="content-wrapper">
                 <div class="container-xxl flex-grow-1 container-p-y">
                     <h4 class="fw-bold py-3 mb-4 d-flex justify-content-between align-items-center">
-                        <span><span class="text-muted fw-light">Claim manager /</span> List claim</span>
-                        <div>
-                            <button class="btn btn-primary btn-sm"><i class="bx bx-check-circle me-1"></i> Đã tiếp nhận
-                            </button>
-                            <button class="btn btn-secondary btn-sm"><i class="bx bx-search-alt me-1"></i> Đã xác minh
-                            </button>
-                            <button class="btn btn-success btn-sm"><i class="bx bx-task me-1"></i> Hoàn tất quy trình
-                            </button>
-                            <button class="btn btn-info btn-sm"><i class="bx bx-like me-1"></i> Chấp nhận</button>
-                            <button class="btn btn-danger btn-sm"><i class="bx bx-x-circle me-1"></i> Từ chối</button>
-                        </div>
+                        <span><span class="text-muted fw-light">User manager /</span> List User</span>
                     </h4>
                     <div class="row mb-3">
                         <div class="col-md-3">
-                            <label for="search-ma-yeu-cau">Mã yêu cầu bồi thường</label>
+                            <label for="search-ma-yeu-cau">Mã người dùng</label>
                             <input type="text" id="search-ma-yeu-cau" class="form-control"
-                                   placeholder="Nhập mã yêu cầu">
+                                   placeholder="Nhập mã người dùng">
                         </div>
                         <div class="col-md-3">
                             <label for="from-date">Từ ngày</label>
@@ -58,20 +48,15 @@
                             <input type="date" id="to-date" class="form-control">
                         </div>
                         <div class="col-md-3">
-                            <label for="status-claim">Trạng thái yêu cầu</label>
-                            <select id="status-claim" class="form-control">
-                                <option value="">Tất cả trạng thái</option>
-                                <option value="Init">Khởi tạo</option>
-                                <option value="Process">Nhân viên đang xử lý</option>
-                                <option value="Verified">Nhân viên đã xác minh</option>
-                                <option value="Invalid">Thông tin chưa chính xác</option>
-                                <option value="Approve">Chấp nhận bồi thường</option>
-                            </select>
+                            <label for="search-ma-yeu-cau">Số điện thoại</label>
+                            <input type="text" id="phone" class="form-control"
+                                   placeholder="Nhập số điện thoại">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-md-12 text-right">
-                            <button id="search-button" onclick="actionSearch()" class="btn btn-primary">Tìm kiếm</button>
+                            <button id="search-button" class="btn btn-primary">Tìm kiếm</button>
+                            <button id="create-button" class="btn btn-success">Tạo mới user</button>
                         </div>
                     </div>
 
@@ -82,12 +67,12 @@
                                 <thead>
                                 <tr>
                                     <th><input type="checkbox" id="selectAll"></th>
-                                    <th>Mã yêu cầu bồi thường</th>
-                                    <th>Tên khách hàng</th>
-                                    <th>Tên sản phẩm bảo hiểm</th>
-                                    <th>Ngày gửi yêu cầu</th>
-                                    <th>Mô tả yêu cầu</th>
-                                    <th>Trạng thái yêu cầu</th>
+                                    <th>Mã yêu cầu người dùng</th>
+                                    <th>Username</th>
+                                    <th>Họ và tên</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Ngày tạo</th>
+                                    <th>Địa chỉ</th>
                                 </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0" id="bodyTableData">
@@ -121,7 +106,6 @@
 <script src="../assets/vendor/js/menu.js"></script>
 <script src="../assets/js/main.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<script src="../js/claim-manager/claim-manager.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {

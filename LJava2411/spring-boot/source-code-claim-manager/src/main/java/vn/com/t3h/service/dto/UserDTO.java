@@ -1,16 +1,10 @@
-package vn.com.t3h.entity;
+package vn.com.t3h.service.dto;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import java.util.HashSet;
-import java.util.Set;
+public class UserDTO {
 
-@Entity
-@Table(name = "users")
-public class UserEntity extends BaseEntity {
-
+    private Long id;
     private String username;
     private String password;
     private String code;
@@ -19,15 +13,15 @@ public class UserEntity extends BaseEntity {
     private String lastName;
     private String phone;
     private String address;
-    private String pathAvatar;
+    private String stringBase64Avatar;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    private Set<RoleEntity> roles = new HashSet<>();
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -93,19 +87,11 @@ public class UserEntity extends BaseEntity {
         this.address = address;
     }
 
-    public String getPathAvatar() {
-        return pathAvatar;
+    public String getStringBase64Avatar() {
+        return stringBase64Avatar;
     }
 
-    public void setPathAvatar(String pathAvatar) {
-        this.pathAvatar = pathAvatar;
-    }
-
-    public Set<RoleEntity> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<RoleEntity> roles) {
-        this.roles = roles;
+    public void setStringBase64Avatar(String stringBase64Avatar) {
+        this.stringBase64Avatar = stringBase64Avatar;
     }
 }

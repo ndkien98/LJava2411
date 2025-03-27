@@ -2,32 +2,12 @@ package vn.com.t3h.service.dto.response;
 
 import lombok.Data;
 
-public class BaseResponse <T>{
+public class ResponsePage<T> extends Response{
 
-    private int code;
-    private String message;
     private Integer pageSize;
     private Integer pageIndex;
     private Integer totalPage;
     private Long totalElement;
-    private T data;
-
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 
     public Integer getPageSize() {
         return pageSize;
@@ -59,13 +39,5 @@ public class BaseResponse <T>{
 
     public void setTotalElement(Long totalElement) {
         this.totalElement = totalElement;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 }

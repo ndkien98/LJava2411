@@ -1,9 +1,7 @@
 package vn.com.t3h.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -13,12 +11,11 @@ import vn.com.t3h.mapper.ClaimMapper;
 import vn.com.t3h.repository.ClaimRepository;
 import vn.com.t3h.service.ClaimService;
 import vn.com.t3h.service.dto.ClaimDTO;
-import vn.com.t3h.service.dto.response.BaseResponse;
+import vn.com.t3h.service.dto.response.ResponsePage;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ClaimServiceImpl implements ClaimService {
@@ -34,11 +31,11 @@ public class ClaimServiceImpl implements ClaimService {
     }
 
     @Override
-    public BaseResponse<List<ClaimDTO>> getClaims(String claimCode,
-                                  LocalDate fromDate,
-                                  LocalDate toDate,
-                                  String codeStatus,
-                                  Pageable pageable) {
+    public ResponsePage<List<ClaimDTO>> getClaims(String claimCode,
+                                                  LocalDate fromDate,
+                                                  LocalDate toDate,
+                                                  String codeStatus,
+                                                  Pageable pageable) {
         // 5 result entity class
         if (StringUtils.isEmpty(claimCode)){
             claimCode = null;
@@ -63,7 +60,7 @@ public class ClaimServiceImpl implements ClaimService {
         }
  */
         claimDTOs = pageEntity.map(entity -> claimMapper.toDto(entity)).stream().toList();
-        BaseResponse<List<ClaimDTO>> response = new BaseResponse<>();
+        ResponsePage<List<ClaimDTO>> response = new ResponsePage<>();
         response.setData(claimDTOs);
         response.setMessage("Success");
         response.setCode(HttpStatus.OK.value()); // 200

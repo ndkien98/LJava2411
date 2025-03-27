@@ -1,16 +1,31 @@
-function getAllClaimFromServer(){
-    fetch('http://localhost:8080/api/claim')
-        .then(response => {
-            if (!response.ok){
-                throw new Error('call api error');
+const PAGE_INIT = 0;
+const SIZE_DEFAULT = 3;
+const BASE_URL = 'http://localhost:8080/';
+var totalPage = 0;
+
+function searchClaim(page,size) {
+    let claimCode = document.getElementById("search-ma-yeu-cau").value;
+    let fromDate = document.getElementById("from-date").value;
+    let toDate = document.getElementById("to-date").value;
+    let codeStatus = document.getElementById("status-claim").value;
+
+    let url = BASE_URL + `api/claim?page=${page}&size=${size}&claimCode=${claimCode}&fromDate=${fromDate}&toDate=${toDate}&codeStatus=${codeStatus}`;
+    console.log(url)
+    fetch(url)  // Bước 1: Gọi API, method fetch đang trả về 1 Promise
+        .then(response => {  // Bước 2: Xử lý phản hồi (response) từ Promise
+            if (!response.ok) {
+                throw new Error('call api error');  // Bước 3: Nếu không thành công, ném lỗi
             }
-            // trả về json data
-            return response.json();
+            return response.json();  // Bước 4: Chuyển dữ liệu nhận được từ API thành JSON, trả về 1 Promise
         })
-        .then(dataResponse => {
-            console.log(dataResponse);
-            renderTable(dataResponse.data);
+        .then(dataResponse => {  // Bước 5: Xử lý dữ liệu nhận được từ API hứng lại Promise từ Bước 4
+            console.log(dataResponse);  // In dữ liệu ra console
+            renderTable(dataResponse.data);  // Hiển thị dữ liệu lên giao diện
+            renderPaging(dataResponse);
         })
+        .catch(error => {  // Bước 6: Xử lý lỗi (nếu có) xử lý nếu Bước 4 bắn ra lỗi
+            console.log(error);  // In lỗi ra console nếu có
+        });
 }
 
 function renderTable(claims){
@@ -37,7 +52,53 @@ function renderTable(claims){
     }
 }
 
+function renderPaging(response){
+    totalPage = response.totalPage;
+    let pageIndex = response.pageIndex;
+
+    let pageBody = document.getElementById("paginationId");
+    // reset empty page body
+    pageBody.innerHTML = '';
+
+    let preIcon = `<li class="page-item">
+                                        <a class="page-link" onclick="changePage(${pageIndex - 1})" aria-label="Next">
+                                           <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>`
+    pageBody.innerHTML += preIcon;
+
+    for (let i = 0; i < totalPage; i++) {
+        let classPage = 'page-item';
+        if (i === pageIndex){
+            classPage += ' active';
+        }
+        let page = `<li class="${classPage}"><a class="page-link" onclick="changePage(${i})">${i + 1}</a></li>`;
+        pageBody.innerHTML += page;
+    }
+
+    let nextIcon = `<li class="page-item">
+                                        <a class="page-link" onclick="changePage(${pageIndex + 1})" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>`
+    pageBody.innerHTML +=nextIcon;
+
+}
+
+function changePage(pageIndex){
+    if (pageIndex < 0){
+        pageIndex = 0;
+    }else if (pageIndex >= totalPage){
+        pageIndex = pageIndex - 1;
+    }
+    searchClaim(pageIndex,SIZE_DEFAULT)
+}
+
+function actionSearch() {
+    searchClaim(PAGE_INIT, SIZE_DEFAULT);
+}
+
 // khi toàn bộ dữ liệu tại window đã load xong
-window.onload = function (){
-    getAllClaimFromServer();
+window.onload = function () {
+    searchClaim(PAGE_INIT, SIZE_DEFAULT);
 }

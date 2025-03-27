@@ -58,20 +58,20 @@
                             <input type="date" id="to-date" class="form-control">
                         </div>
                         <div class="col-md-3">
-                            <label for="trang-thai-yeu-cau">Trạng thái yêu cầu</label>
-                            <select id="trang-thai-yeu-cau" class="form-control">
+                            <label for="status-claim">Trạng thái yêu cầu</label>
+                            <select id="status-claim" class="form-control">
                                 <option value="">Tất cả trạng thái</option>
-                                <option value="Đang xử lý">Đang xử lý</option>
-                                <option value="Hoàn thành">Hoàn thành</option>
-                                <option value="Đã lên lịch">Đã lên lịch</option>
-                                <option value="Đang chờ">Đang chờ</option>
-                                <option value="Bị từ chối">Bị từ chối</option>
+                                <option value="Init">Khởi tạo</option>
+                                <option value="Process">Nhân viên đang xử lý</option>
+                                <option value="Verified">Nhân viên đã xác minh</option>
+                                <option value="Invalid">Thông tin chưa chính xác</option>
+                                <option value="Approve">Chấp nhận bồi thường</option>
                             </select>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-md-12 text-right">
-                            <button id="search-button" class="btn btn-primary">Tìm kiếm</button>
+                            <button id="search-button" onclick="actionSearch()" class="btn btn-primary">Tìm kiếm</button>
                         </div>
                     </div>
 
@@ -91,51 +91,6 @@
                                 </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0" id="bodyTableData">
-                                <tr>
-                                    <td><input type="checkbox" class="recordCheckbox"></td>
-                                    <td><strong>CL001</strong></td>
-                                    <td>Nguyễn Văn A</td>
-                                    <td>Bảo hiểm xe máy</td>
-                                    <td>2024-07-10</td>
-                                    <td>Hư hỏng phần đầu xe do tai nạn</td>
-                                    <td><span class="badge bg-label-primary me-1">Đang xử lý</span></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="recordCheckbox"></td>
-                                    <td><strong>CL002</strong></td>
-                                    <td>Trần Thị B</td>
-                                    <td>Bảo hiểm nhà cửa</td>
-                                    <td>2024-06-25</td>
-                                    <td>Thiệt hại do cháy</td>
-                                    <td><span class="badge bg-label-success me-1">Hoàn thành</span></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="recordCheckbox"></td>
-                                    <td><strong>CL003</strong></td>
-                                    <td>Lê Thị C</td>
-                                    <td>Bảo hiểm sức khỏe</td>
-                                    <td>2024-05-15</td>
-                                    <td>Chi phí khám bệnh</td>
-                                    <td><span class="badge bg-label-info me-1">Đã lên lịch</span></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="recordCheckbox"></td>
-                                    <td><strong>CL004</strong></td>
-                                    <td>Phạm Văn D</td>
-                                    <td>Bảo hiểm du lịch</td>
-                                    <td>2024-04-20</td>
-                                    <td>Hủy chuyến đi do dịch bệnh</td>
-                                    <td><span class="badge bg-label-warning me-1">Đang chờ</span></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="recordCheckbox"></td>
-                                    <td><strong>CL005</strong></td>
-                                    <td>Đỗ Thị E</td>
-                                    <td>Bảo hiểm nhân thọ</td>
-                                    <td>2024-03-10</td>
-                                    <td>Chi phí điều trị bệnh hiểm nghèo</td>
-                                    <td><span class="badge bg-label-danger me-1">Bị từ chối</span></td>
-                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -144,20 +99,20 @@
     margin-top: 2%;
     padding-right: 2%;
 ">
-                                <ul class="pagination">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
+                                <ul class="pagination" id="paginationId">
+<!--                                    <li class="page-item">-->
+<!--                                        <a class="page-link" href="#" aria-label="Previous">-->
+<!--                                            <span aria-hidden="true">&laquo;</span>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--                                    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--                                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--                                    <li class="page-item">-->
+<!--                                        <a class="page-link" href="#" aria-label="Next">-->
+<!--                                            <span aria-hidden="true">&raquo;</span>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
                                 </ul>
                             </nav>
                         </div>

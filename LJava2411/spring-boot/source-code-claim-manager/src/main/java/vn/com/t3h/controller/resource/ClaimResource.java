@@ -4,10 +4,7 @@ import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import vn.com.t3h.service.ClaimService;
 import vn.com.t3h.service.dto.ClaimDTO;
 import vn.com.t3h.service.dto.response.BaseResponse;
@@ -34,5 +31,12 @@ public class ClaimResource {
             Pageable pageable){
         BaseResponse<List<ClaimDTO>> response = claimService.getClaims(claimCode,fromDate,toDate,codeStatus,pageable);
         return ResponseEntity.ok(response);
+    }
+
+
+    @PostMapping
+    public ResponseEntity<BaseResponse<ClaimDTO>> save(@RequestParam("claimId")Long claimId,
+                                                       @RequestBody ClaimDTO claimDTO){
+        return null;
     }
 }

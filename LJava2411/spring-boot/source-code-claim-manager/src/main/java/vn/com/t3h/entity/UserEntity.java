@@ -20,6 +20,7 @@ public class UserEntity extends BaseEntity {
     private String phone;
     private String address;
     private String pathAvatar;
+    private String mimeType;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
@@ -28,6 +29,14 @@ public class UserEntity extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<RoleEntity> roles = new HashSet<>();
+
+    public void setMimeType(String mimeType) {
+        this.mimeType = mimeType;
+    }
+
+    public String getMimeType() {
+        return mimeType;
+    }
 
     public String getUsername() {
         return username;

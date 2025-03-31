@@ -1,11 +1,15 @@
 package vn.com.t3h.service.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+
+import java.time.LocalDate;
 
 public class UserDTO {
 
     private Long id;
     private String username;
+    @JsonIgnore
     private String password;
     private String code;
     private String email;
@@ -13,7 +17,34 @@ public class UserDTO {
     private String lastName;
     private String phone;
     private String address;
+    private LocalDate createdDate;
+    private LocalDate lastModifiedDate;
     private String stringBase64Avatar;
+    private String mimeType;
+
+    public String getMimeType() {
+        return mimeType;
+    }
+
+    public void setMimeType(String mimeType) {
+        this.mimeType = mimeType;
+    }
+
+    public LocalDate getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(LocalDate lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public LocalDate getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(LocalDate createdDate) {
+        this.createdDate = createdDate;
+    }
 
     public Long getId() {
         return id;

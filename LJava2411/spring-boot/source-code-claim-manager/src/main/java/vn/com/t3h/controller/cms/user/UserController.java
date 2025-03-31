@@ -2,6 +2,7 @@ package vn.com.t3h.controller.cms.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -16,6 +17,11 @@ public class UserController {
     @GetMapping("/create-user")
     public String createUser() {
         return "cms/user/create-user";
+    }
+
+    @GetMapping("/detail-user/{id}")
+    public String detailUser(@PathVariable Long id) {
+        return "cms/user/detail-user";
     }
 
 }

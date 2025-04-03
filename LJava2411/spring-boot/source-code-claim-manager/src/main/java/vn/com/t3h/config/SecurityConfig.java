@@ -37,6 +37,12 @@ public class SecurityConfig {
                 .authorizeHttpRequests(request -> { // config các request
                     request.requestMatchers("/cms/**").hasAnyRole("ADMIN") // tất cả các đường đãn bắt từ từ /cms/ đều phải có role ADMIN mới được truy cập vào
                             .requestMatchers("/","/home","/login","/logout").permitAll()// tất cả các đường dẫn này có thể truy cạp mà không càn login
+                            .requestMatchers(
+                                    "/assets/**", "/fonts/**", "/homeguest_files/**",
+                                    "/js/**", "/libs/**", "/loginmetlife/**",
+                                    "/page404/**", "/scss/**", "/tasks/**", "/css/**", "/images/**","/cms-rs/**","/file/**").permitAll()
+                            .requestMatchers("/resource/**").permitAll()
+                            .requestMatchers("/kaira/**").permitAll()
                             .anyRequest().authenticated();
                 })
                 .formLogin( // custom form login, không sử dụng form login mặc định của spring security

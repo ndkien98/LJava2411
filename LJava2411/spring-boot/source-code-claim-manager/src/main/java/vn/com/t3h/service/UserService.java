@@ -20,4 +20,5 @@ public interface UserService {
             Pageable pageable);
 
     Response<UserDTO> getDetailUser(Long id);
+
 }

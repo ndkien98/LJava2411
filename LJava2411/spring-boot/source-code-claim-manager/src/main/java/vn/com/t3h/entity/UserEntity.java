@@ -22,7 +22,16 @@ public class UserEntity extends BaseEntity {
     private String pathAvatar;
     private String mimeType;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    /*
+    fetch:
+        + FetchType.EAGER: khi lấy ra 1 user entity từ database thì orm sẽ tự động lấy ra hết tất cả
+                            các role của user Entity và đưa vào roles luôn
+        + FetchType.LAZY: khi lấy ra 1 user entity từ database thì orm sẽ KHÔNG tự động lấy ra hết tất cả
+                            các role của user Entity và đưa vào roles luôn, mà nếu muốn lấy ra danh sách
+                           role của userentity sẽ phải tự thực hiện query khác
+
+     */
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),

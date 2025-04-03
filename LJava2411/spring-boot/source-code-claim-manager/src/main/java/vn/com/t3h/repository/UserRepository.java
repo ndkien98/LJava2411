@@ -24,4 +24,7 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
             LocalDate toDate,
             String phone,
             Pageable pageable);
+
+
+    UserEntity findByUsername(String username);
 }

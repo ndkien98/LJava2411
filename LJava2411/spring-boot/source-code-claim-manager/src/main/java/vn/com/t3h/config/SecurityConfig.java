@@ -36,7 +36,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> { // config các request
                     request.requestMatchers("/cms/**").hasAnyRole("ADMIN") // tất cả các đường đãn bắt từ từ /cms/ đều phải có role ADMIN mới được truy cập vào
-                            .requestMatchers("/","/home","/login","/logout").permitAll()// tất cả các đường dẫn này có thể truy cạp mà không càn login
+                            .requestMatchers("/","/home","/login","/logout","/process_login").permitAll()// tất cả các đường dẫn này có thể truy cạp mà không càn login
                             .requestMatchers(
                                     "/assets/**", "/fonts/**", "/homeguest_files/**",
                                     "/js/**", "/libs/**", "/loginmetlife/**",
@@ -49,7 +49,7 @@ public class SecurityConfig {
                         form ->
                                 form.loginPage("/login")// page login được custom
                                 .loginProcessingUrl("/process_login") // url để view gửi username, password lên cho server, config tại form login ở page login
-                                .defaultSuccessUrl("/process-after-login-success") // /process-after-login-success url được điều hướng đến khi login thành công, sử dụng để xử lý tự động điều hướng page theo role, ví dụ role Admin -> /cms/home, role user -> /home
+                                .defaultSuccessUrl("/process-after-login-success",true) // /process-after-login-success url được điều hướng đến khi login thành công, sử dụng để xử lý tự động điều hướng page theo role, ví dụ role Admin -> /cms/home, role user -> /home
                                         .failureUrl("/login?error=true")
                 )
                 .logout(logout -> logout.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll());

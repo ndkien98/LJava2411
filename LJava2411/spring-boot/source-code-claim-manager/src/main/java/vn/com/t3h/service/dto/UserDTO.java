@@ -21,6 +21,15 @@ public class UserDTO {
     private LocalDate lastModifiedDate;
     private String stringBase64Avatar;
     private String mimeType;
+    private String roleName;
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
 
     public String getMimeType() {
         return mimeType;

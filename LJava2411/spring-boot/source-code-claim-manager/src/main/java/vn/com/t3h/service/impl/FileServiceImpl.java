@@ -1,6 +1,7 @@
 package vn.com.t3h.service.impl;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import vn.com.t3h.service.FileService;
 
 import java.io.File;
@@ -12,6 +13,9 @@ import java.util.Base64;
 public class FileServiceImpl implements FileService {
     @Override
     public String getBase64FromPath(String path) {
+        if (StringUtils.isEmpty(path)){
+            return "";
+        }
         String base64 = null;
         // convert file to String base 64
         try {
@@ -19,7 +23,7 @@ public class FileServiceImpl implements FileService {
             byte[] bytes = Files.readAllBytes(file.toPath());
             base64 = Base64.getEncoder().encodeToString(bytes);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return base64;
     }

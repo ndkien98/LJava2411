@@ -39,4 +39,9 @@ public class UserResource {
         Response<UserDTO> response = userService.getDetailUser(id);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/current-user")
+    public ResponseEntity<Response<UserDTO>> getCurrentUser() {
+        return ResponseEntity.ok(userService.getCurrentUser());
+    }
 }

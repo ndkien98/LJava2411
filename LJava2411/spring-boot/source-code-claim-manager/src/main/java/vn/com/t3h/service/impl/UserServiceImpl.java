@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import vn.com.t3h.entity.RoleEntity;
@@ -18,6 +19,7 @@ import vn.com.t3h.service.dto.UserDTO;
 import vn.com.t3h.service.dto.response.Response;
 import vn.com.t3h.service.dto.response.ResponsePage;
 import vn.com.t3h.utils.Constant;
+import vn.com.t3h.utils.SessionUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -92,13 +94,23 @@ public class UserServiceImpl implements UserService {
             Response<UserDTO> response = new Response<>(HttpStatus.BAD_REQUEST.value(), "user not exits",null);
             return response;
         }
-
         UserDTO userDto = userMapper.toDto(userEntity);
-        String fileBase64 = fileService.getBase64FromPath(userEntity.getPathAvatar());
-        if (StringUtils.hasText(fileBase64)){
-            userDto.setStringBase64Avatar(userEntity.getMimeType() + fileBase64);
-        }
+//        String fileBase64 = fileService.getBase64FromPath(userEntity.getPathAvatar());
+//        if (StringUtils.hasText(fileBase64)){
+//            userDto.setStringBase64Avatar(userEntity.getMimeType() + fileBase64);
+//        }
         Response<UserDTO> response = new Response<>(HttpStatus.OK.value(), HttpStatus.OK.name(),userDto);
+        return response;
+    }
+
+    @Override
+    public Response<UserDTO> getCurrentUser() {
+        // get current user login ?
+        UserDetails userDetails = SessionUtils.getUserPrinciple();
+        System.out.println(String.format("current user login: %s",userDetails.getUsername()));
+        UserEntity userEntity = userRepository.findByUsername(userDetails.getUsername());
+        UserDTO userDto = userMapper.toDto(userEntity);
+        Response<UserDTO> response = new Response<>(HttpStatus.OK.value(),"Success",userDto);
         return response;
     }
 

@@ -21,4 +21,5 @@ public interface UserService {
 
     Response<UserDTO> getDetailUser(Long id);
 
+    Response<UserDTO> getCurrentUser();
 }

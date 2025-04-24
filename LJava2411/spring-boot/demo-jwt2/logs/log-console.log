@@ -1,0 +1,248 @@
+23-02-2023 16:27:21.939 [restartedMain] INFO  com.t3h.UniqloSpringbootApplication.logStarting - Starting UniqloSpringbootApplication on kiennd with PID 17908 (G:\t3h\BE\Buoi26\uniqlo-spring-boot\target\classes started by Admin in G:\t3h\BE\Buoi26\uniqlo-spring-boot)
+23-02-2023 16:27:21.961 [restartedMain] INFO  com.t3h.UniqloSpringbootApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+23-02-2023 16:27:22.139 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+23-02-2023 16:27:22.141 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+23-02-2023 16:27:24.199 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+23-02-2023 16:27:24.358 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 137ms. Found 2 JPA repository interfaces.
+23-02-2023 16:27:24.957 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$a57d6378] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23-02-2023 16:27:25.106 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+23-02-2023 16:27:25.451 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@64df4bcd' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23-02-2023 16:27:25.470 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23-02-2023 16:27:26.730 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+23-02-2023 16:27:26.760 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+23-02-2023 16:27:26.761 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.38]
+23-02-2023 16:27:27.067 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+23-02-2023 16:27:27.072 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 4927 ms
+23-02-2023 16:27:27.789 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+23-02-2023 16:27:28.327 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+23-02-2023 16:27:28.483 [task-1] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+23-02-2023 16:27:28.701 [task-1] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.21.Final
+23-02-2023 16:27:29.200 [task-1] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+23-02-2023 16:27:29.605 [task-1] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+23-02-2023 16:27:30.614 [restartedMain] INFO  org.ehcache.core.EhcacheManager.createCache - Cache 'JWT_CACHE' created in EhcacheManager.
+23-02-2023 16:27:30.680 [restartedMain] INFO  org.ehcache.jsr107.Eh107CacheManager.registerObject - Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=file./G./t3h/BE/Buoi26/uniqlo-spring-boot/target/classes/ehcache.xml,Cache=JWT_CACHE
+23-02-2023 16:27:31.267 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: Ant [pattern='/**', OPTIONS], []
+23-02-2023 16:27:31.267 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: Ant [pattern='/v3/api-docs/**'], []
+23-02-2023 16:27:31.268 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+23-02-2023 16:27:31.268 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: Ant [pattern='/swagger-ui/**'], []
+23-02-2023 16:27:31.860 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping.<init> - Adding welcome page template: index
+23-02-2023 16:27:32.462 [task-1] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+23-02-2023 16:27:32.522 [task-1] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+23-02-2023 16:27:35.232 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2dedc9bc, org.springframework.security.web.context.SecurityContextPersistenceFilter@59db4693, org.springframework.security.web.header.HeaderWriterFilter@8a9d9d7, org.springframework.web.filter.CorsFilter@2c1db310, org.springframework.security.web.authentication.logout.LogoutFilter@2ff58f5a, com.t3h.sercurity.filter.JwtAuthenticationFilter@793757a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5371f5e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47bcc9d8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77e0dd58, org.springframework.security.web.session.SessionManagementFilter@20b7e141, org.springframework.security.web.access.ExceptionTranslationFilter@431cdbef, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3ab404c4]
+23-02-2023 16:27:36.121 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+23-02-2023 16:27:36.133 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+23-02-2023 16:27:36.193 [task-2] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+23-02-2023 16:27:36.555 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+23-02-2023 16:27:36.557 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent - Triggering deferred initialization of Spring Data repositoriesâ€¦
+23-02-2023 16:27:37.340 [restartedMain] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent - Spring Data repositories initialized!
+23-02-2023 16:27:37.365 [restartedMain] INFO  com.t3h.UniqloSpringbootApplication.logStarted - Started UniqloSpringbootApplication in 16.574 seconds (JVM running for 20.462)
+23-02-2023 16:31:37.840 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23-02-2023 16:31:37.841 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+23-02-2023 16:31:37.866 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 24 ms
+23-02-2023 16:31:38.501 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        userentity0_.id as id1_1_,
+        userentity0_.birthday as birthday2_1_,
+        userentity0_.cart_id as cart_id3_1_,
+        userentity0_.email as email4_1_,
+        userentity0_.full_name as full_nam5_1_,
+        userentity0_.gender as gender6_1_,
+        userentity0_.password as password7_1_,
+        userentity0_.user_code as user_cod8_1_,
+        userentity0_.username as username9_1_ 
+    from
+        user userentity0_ 
+    where
+        userentity0_.username=? 
+        and userentity0_.password=?
+23-02-2023 16:31:38.514 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [1] as [VARCHAR] - [admin]
+23-02-2023 16:31:38.515 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [2] as [VARCHAR] - [880e0d76]
+23-02-2023 16:31:38.805 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        roleentiti0_.user_id as user_id1_2_0_,
+        roleentiti0_.role_id as role_id2_2_0_,
+        roleentity1_.id as id1_0_1_,
+        roleentity1_.name as name2_0_1_ 
+    from
+        user_role roleentiti0_ 
+    inner join
+        role roleentity1_ 
+            on roleentiti0_.role_id=roleentity1_.id 
+    where
+        roleentiti0_.user_id=?
+23-02-2023 16:31:38.808 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [1] as [INTEGER] - [1]
+23-02-2023 16:31:38.905 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        userentiti0_.role_id as role_id2_2_0_,
+        userentiti0_.user_id as user_id1_2_0_,
+        userentity1_.id as id1_1_1_,
+        userentity1_.birthday as birthday2_1_1_,
+        userentity1_.cart_id as cart_id3_1_1_,
+        userentity1_.email as email4_1_1_,
+        userentity1_.full_name as full_nam5_1_1_,
+        userentity1_.gender as gender6_1_1_,
+        userentity1_.password as password7_1_1_,
+        userentity1_.user_code as user_cod8_1_1_,
+        userentity1_.username as username9_1_1_ 
+    from
+        user_role userentiti0_ 
+    inner join
+        user userentity1_ 
+            on userentiti0_.user_id=userentity1_.id 
+    where
+        userentiti0_.role_id=?
+23-02-2023 16:31:38.906 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [1] as [INTEGER] - [2]
+23-02-2023 16:31:38.911 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        roleentiti0_.user_id as user_id1_2_0_,
+        roleentiti0_.role_id as role_id2_2_0_,
+        roleentity1_.id as id1_0_1_,
+        roleentity1_.name as name2_0_1_ 
+    from
+        user_role roleentiti0_ 
+    inner join
+        role roleentity1_ 
+            on roleentiti0_.role_id=roleentity1_.id 
+    where
+        roleentiti0_.user_id=?
+23-02-2023 16:31:38.913 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [1] as [INTEGER] - [2]
+23-02-2023 16:31:38.918 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        userentiti0_.role_id as role_id2_2_0_,
+        userentiti0_.user_id as user_id1_2_0_,
+        userentity1_.id as id1_1_1_,
+        userentity1_.birthday as birthday2_1_1_,
+        userentity1_.cart_id as cart_id3_1_1_,
+        userentity1_.email as email4_1_1_,
+        userentity1_.full_name as full_nam5_1_1_,
+        userentity1_.gender as gender6_1_1_,
+        userentity1_.password as password7_1_1_,
+        userentity1_.user_code as user_cod8_1_1_,
+        userentity1_.username as username9_1_1_ 
+    from
+        user_role userentiti0_ 
+    inner join
+        user userentity1_ 
+            on userentiti0_.user_id=userentity1_.id 
+    where
+        userentiti0_.role_id=?
+23-02-2023 16:31:38.919 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [1] as [INTEGER] - [1]
+23-02-2023 16:32:28.598 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        userentity0_.id as id1_1_,
+        userentity0_.birthday as birthday2_1_,
+        userentity0_.cart_id as cart_id3_1_,
+        userentity0_.email as email4_1_,
+        userentity0_.full_name as full_nam5_1_,
+        userentity0_.gender as gender6_1_,
+        userentity0_.password as password7_1_,
+        userentity0_.user_code as user_cod8_1_,
+        userentity0_.username as username9_1_ 
+    from
+        user userentity0_ 
+    where
+        userentity0_.username=?
+23-02-2023 16:32:28.600 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [1] as [VARCHAR] - [admin]
+23-02-2023 16:32:28.604 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        roleentiti0_.user_id as user_id1_2_0_,
+        roleentiti0_.role_id as role_id2_2_0_,
+        roleentity1_.id as id1_0_1_,
+        roleentity1_.name as name2_0_1_ 
+    from
+        user_role roleentiti0_ 
+    inner join
+        role roleentity1_ 
+            on roleentiti0_.role_id=roleentity1_.id 
+    where
+        roleentiti0_.user_id=?
+23-02-2023 16:32:28.605 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [1] as [INTEGER] - [1]
+23-02-2023 16:32:28.609 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        userentiti0_.role_id as role_id2_2_0_,
+        userentiti0_.user_id as user_id1_2_0_,
+        userentity1_.id as id1_1_1_,
+        userentity1_.birthday as birthday2_1_1_,
+        userentity1_.cart_id as cart_id3_1_1_,
+        userentity1_.email as email4_1_1_,
+        userentity1_.full_name as full_nam5_1_1_,
+        userentity1_.gender as gender6_1_1_,
+        userentity1_.password as password7_1_1_,
+        userentity1_.user_code as user_cod8_1_1_,
+        userentity1_.username as username9_1_1_ 
+    from
+        user_role userentiti0_ 
+    inner join
+        user userentity1_ 
+            on userentiti0_.user_id=userentity1_.id 
+    where
+        userentiti0_.role_id=?
+23-02-2023 16:32:28.611 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [1] as [INTEGER] - [2]
+23-02-2023 16:32:28.615 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        roleentiti0_.user_id as user_id1_2_0_,
+        roleentiti0_.role_id as role_id2_2_0_,
+        roleentity1_.id as id1_0_1_,
+        roleentity1_.name as name2_0_1_ 
+    from
+        user_role roleentiti0_ 
+    inner join
+        role roleentity1_ 
+            on roleentiti0_.role_id=roleentity1_.id 
+    where
+        roleentiti0_.user_id=?
+23-02-2023 16:32:28.617 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [1] as [INTEGER] - [2]
+23-02-2023 16:32:28.620 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        userentiti0_.role_id as role_id2_2_0_,
+        userentiti0_.user_id as user_id1_2_0_,
+        userentity1_.id as id1_1_1_,
+        userentity1_.birthday as birthday2_1_1_,
+        userentity1_.cart_id as cart_id3_1_1_,
+        userentity1_.email as email4_1_1_,
+        userentity1_.full_name as full_nam5_1_1_,
+        userentity1_.gender as gender6_1_1_,
+        userentity1_.password as password7_1_1_,
+        userentity1_.user_code as user_cod8_1_1_,
+        userentity1_.username as username9_1_1_ 
+    from
+        user_role userentiti0_ 
+    inner join
+        user userentity1_ 
+            on userentiti0_.user_id=userentity1_.id 
+    where
+        userentiti0_.role_id=?
+23-02-2023 16:32:28.621 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder.bind - binding parameter [1] as [INTEGER] - [1]
+23-02-2023 19:36:28.944 [main] INFO  c.t.UniqloSpringbootApplicationTests.logStarting - Starting UniqloSpringbootApplicationTests on kiennd with PID 13896 (started by Admin in G:\t3h\BE\Buoi26\uniqlo-spring-boot)
+23-02-2023 19:36:29.702 [main] INFO  c.t.UniqloSpringbootApplicationTests.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+23-02-2023 19:36:33.122 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+23-02-2023 19:36:33.903 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 653ms. Found 2 JPA repository interfaces.
+23-02-2023 19:36:37.442 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$a888cd45] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23-02-2023 19:36:37.877 [main] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+23-02-2023 19:36:38.218 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4a9860' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23-02-2023 19:36:38.321 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23-02-2023 19:36:39.834 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+23-02-2023 19:36:40.102 [task-1] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+23-02-2023 19:36:40.732 [task-1] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.21.Final
+23-02-2023 19:36:41.672 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+23-02-2023 19:36:41.885 [task-1] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+23-02-2023 19:36:44.697 [main] INFO  org.ehcache.core.EhcacheManager.createCache - Cache 'JWT_CACHE' created in EhcacheManager.
+23-02-2023 19:36:44.849 [task-1] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+23-02-2023 19:36:45.080 [main] INFO  org.ehcache.jsr107.Eh107CacheManager.registerObject - Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=file./G./t3h/BE/Buoi26/uniqlo-spring-boot/target/classes/ehcache.xml,Cache=JWT_CACHE
+23-02-2023 19:36:46.889 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: Ant [pattern='/**', OPTIONS], []
+23-02-2023 19:36:46.894 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: Ant [pattern='/v3/api-docs/**'], []
+23-02-2023 19:36:46.899 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+23-02-2023 19:36:46.900 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: Ant [pattern='/swagger-ui/**'], []
+23-02-2023 19:36:47.929 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping.<init> - Adding welcome page template: index
+23-02-2023 19:36:52.994 [task-1] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+23-02-2023 19:36:53.556 [task-1] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+23-02-2023 19:36:56.706 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f9ccd0c, org.springframework.security.web.context.SecurityContextPersistenceFilter@60b553f, org.springframework.security.web.header.HeaderWriterFilter@558127d2, org.springframework.web.filter.CorsFilter@6738e8b2, org.springframework.security.web.authentication.logout.LogoutFilter@79777da7, com.t3h.sercurity.filter.JwtAuthenticationFilter@1d8dbf10, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d4da729, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c2a3f0c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@609ad016, org.springframework.security.web.session.SessionManagementFilter@6b64bf61, org.springframework.security.web.access.ExceptionTranslationFilter@351e86b2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@42cf5a6f]
+23-02-2023 19:37:01.269 [task-1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+23-02-2023 19:37:01.292 [task-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+23-02-2023 19:37:01.799 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent - Triggering deferred initialization of Spring Data repositories…
+23-02-2023 19:37:05.610 [main] INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent - Spring Data repositories initialized!
+23-02-2023 19:37:05.732 [main] INFO  c.t.UniqloSpringbootApplicationTests.logStarted - Started UniqloSpringbootApplicationTests in 38.88 seconds (JVM running for 44.102)
+23-02-2023 19:37:09.229 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+23-02-2023 19:37:09.308 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+23-02-2023 19:37:09.334 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+23-02-2023 19:37:09.801 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:fragment="header" class="container text-center">
+    <div th:if="${isSinged}">
+        <h3><a th:href="@{/logout}">logout</a></h3>
+        <h1>Welcome </h1>
+        <h1 th:text="${fullName}"></h1>
+    </div>
+    <!-- ELSE -->
+    <div th:unless="${isSinged}">
+        <h3><a th:href="@{/login}">Login</a></h3>
+    </div>
+</div>
+
+</body>
+</html>

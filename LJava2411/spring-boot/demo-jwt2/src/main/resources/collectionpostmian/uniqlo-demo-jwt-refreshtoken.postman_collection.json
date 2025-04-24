@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "c3c8a3aa-4568-4623-a222-af431606604e",
+		"name": "uniqlo-demo-jwt-refreshtoken",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7172419",
+		"_collection_link": "https://red-water-7228.postman.co/workspace/t3h~6a934549-be09-42b0-819c-8681d11dae62/collection/7172419-c3c8a3aa-4568-4623-a222-af431606604e?action=share&source=collection_link&creator=7172419"
+	},
+	"item": [
+		{
+			"name": "API 01",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 02",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbeyJpZCI6MSwibmFtZSI6IkFETUlOIn0seyJpZCI6MiwibmFtZSI6IlVTRVIifV0sImV4cCI6MTc0NTUwMDk5NiwidXNlcm5hbWUiOiJhZG1pbiJ9.uO__zZB41o_M9fdCATFh16Snm7JUDRut8OVxJW-4hYFpNu5b7JtBElUZY5mSZKqEhwUFjtw-v-yLft-txUvu6A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"user"
+					]
+				},
+				"description": "lấy danh sách user từ beare token"
+			},
+			"response": []
+		},
+		{
+			"name": "API 03",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbeyJpZCI6MSwibmFtZSI6IkFETUlOIn0seyJpZCI6MiwibmFtZSI6IlVTRVIifV0sImV4cCI6MTc0NTUwMDk5NiwidXNlcm5hbWUiOiJhZG1pbiJ9.uO__zZB41o_M9fdCATFh16Snm7JUDRut8OVxJW-4hYFpNu5b7JtBElUZY5mSZKqEhwUFjtw-v-yLft-txUvu6A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"logout"
+					]
+				},
+				"description": "api logout remove token at cache"
+			},
+			"response": []
+		},
+		{
+			"name": "API 04",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\":\"eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbeyJpZCI6MSwibmFtZSI6IkFETUlOIn0seyJpZCI6MiwibmFtZSI6IlVTRVIifV0sImV4cCI6MTc0NTUwMTE3NiwidXNlcm5hbWUiOiJhZG1pbiJ9.I1uJnt1KewhAdj3DTsQiSCaHynnhUAaQ2nVvBW5V0N3Y71lmPtekKWLfVbOnV0_oL1bOrxrS9FGhn6WdFcpTEg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/refresh-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"refresh-token"
+					]
+				},
+				"description": "api sent refresh token to gen new main token"
+			},
+			"response": []
+		}
+	]
+}

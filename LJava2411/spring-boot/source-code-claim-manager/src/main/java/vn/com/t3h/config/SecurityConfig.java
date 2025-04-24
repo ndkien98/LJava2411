@@ -5,6 +5,8 @@ import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -61,6 +63,7 @@ public class SecurityConfig {
                                     "/js/**", "/libs/**", "/loginmetlife/**",
                                     "/page404/**", "/scss/**", "/tasks/**", "/css/**", "/images/**","/cms-rs/**","/file/**").permitAll()
                             .requestMatchers("/resource/**").permitAll()
+                            .requestMatchers("/auth/**").permitAll()
                             .requestMatchers("/kaira/**").permitAll()
                             .anyRequest().authenticated();
                 })

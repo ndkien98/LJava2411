@@ -4,6 +4,8 @@ import io.jsonwebtoken.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+import vn.com.t3h.entity.UserEntity;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -31,6 +33,23 @@ public class JwtTokenUtil {
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationInMs))
+                .signWith(SignatureAlgorithm.HS256, jwtSecret)
+                .compact();
+    }
+
+
+    public String generateRefreshToken(UserEntity userEntity, Date currentDate) {
+        Date expireDate = new Date(currentDate.getTime() + jwtExpirationInMs);
+        Map<String,Object> claim = new HashMap<>();
+//        claim.put("role",userEntity.getRoles());
+        claim.put("username",userEntity.getUsername());
+        // Tạo chuỗi json web token từ id của user.
+        return Jwts.builder()
+                .setSubject(Long.toString(userEntity.getId()))
+                .setAudience(userEntity.getUsername())
+                .setIssuedAt(currentDate)
+                .setClaims(claim)
+                .setExpiration(expireDate)
                 .signWith(SignatureAlgorithm.HS256, jwtSecret)
                 .compact();
     }

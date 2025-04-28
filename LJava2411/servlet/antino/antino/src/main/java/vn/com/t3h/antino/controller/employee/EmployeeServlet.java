@@ -22,9 +22,9 @@ public class EmployeeServlet extends HttpServlet {
 
     private EmployeeService employeeService;
 
-//    public EmployeeServlet() {
-//        employeeService = new EmployeeServiceImpl(new EmployeeDAOImpl(),new DepartmentDaoImpl());
-//    }
+    public EmployeeServlet() {
+        employeeService = new EmployeeServiceImpl(new EmployeeDAOImpl(),new DepartmentDaoImpl());
+    }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

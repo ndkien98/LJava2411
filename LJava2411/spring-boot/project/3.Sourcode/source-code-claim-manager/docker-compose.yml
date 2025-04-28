@@ -1,0 +1,28 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    networks:
+      - claim-mysql-network
+    ports:
+      - "3307:3306"
+    volumes:
+      - /d/t3h/ljava2411/deploy/data_mysql:/var/lib/mysql
+  claim-springboot:
+    image: claim-image:v.0.3
+    container_name: claim-container
+    depends_on:
+      - mysql # chạy service mysql trước khi chạy service claim
+    networks:
+      - claim-mysql-network
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-container:3306/insuranceclaim?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 123456
+networks:
+  claim-mysql-network:
+    driver: bridge

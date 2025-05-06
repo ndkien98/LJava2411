@@ -3,32 +3,55 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
-                           http://www.springframework.org/schema/context
-                           https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-<!--    context:component-scan: cho spring biet cần quét các folder package nào để tạo bean-->
-<!--    tìm tất cả các class có annotation(@Controller, @Component,@Service,@Repository để tạo bean cho tất cả các class đó-->
-    <!-- Cấu hình component-scan để Spring tìm kiếm các controller-->
-<!--    <context:component-scan base-package="vn.com.t3h.controller" />-->
-<!--    <context:component-scan base-package="vn.com.t3h.service" />-->
-<!--    <context:component-scan base-package="vn.com.t3h.dao" />-->
-    <context:component-scan base-package="vn.com.t3h" />
+<!--    <context:component-scan base-package="vn.com.t3h"/>-->
 
     <!-- Cấu hình view resolver để hiển thị JSP
-     để chỉ định cho spring (InternalResourceViewResolver) biết các file view được đặt tại folder nào
-     để khi trả ra tên file, (InternalResourceViewResolver) sẽ tự động tìm kiếm các file đó trong folder được chỉ định
-     -->
+ để chỉ định cho spring (InternalResourceViewResolver) biết các file view được đặt tại folder nào
+ để khi trả ra tên file, (InternalResourceViewResolver) sẽ tự động tìm kiếm các file đó trong folder được chỉ định
+ -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-<!--        config đường dẫn file sẽ bắt đầu bằng-->
-        <property name="prefix" value="/WEB-INF/views/" />
-<!--        config đường dẫn file view sẽ kết thúc bằng -->
-        <property name="suffix" value=".jsp" />
+        <!--        config đường dẫn file sẽ bắt đầu bằng-->
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <!--        config đường dẫn file view sẽ kết thúc bằng -->
+        <property name="suffix" value=".jsp"/>
     </bean>
 
-    <mvc:resources mapping="/static/**" location="/static/" />
+    <mvc:resources mapping="/static/**" location="/static/"/>
 
     <!-- Đăng ký các mapping cho servlet -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
+
+    <!-- Load cấu hình từ application.properties -->
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <!-- DataSource -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!-- JdbcTemplate -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="productJdbcTemplateRepositoryImpl" class="vn.com.t3h.dao.impl.ProductJdbcTemplateRepositoryImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="productService" class="vn.com.t3h.service.impl.ProductServiceImpl">
+        <property name="productRepository" ref="productJdbcTemplateRepositoryImpl"/>
+    </bean>
+
+    <bean id="productionController" class="vn.com.t3h.controller.ProductionController">
+        <property name="productService" ref="productService"/>
+    </bean>
+
 
 </beans>

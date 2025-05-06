@@ -15,11 +15,6 @@ public class ProductionController {
 //    @Autowired
     private ProductService productService;
 
-    public ProductionController(ProductService productService) {
-        this.productService = productService;
-    }
-
-
     @GetMapping("/products")
     public String products(Model model) {
         List<ProductEntity> productDTOS = productService.getProducts();
@@ -27,4 +22,7 @@ public class ProductionController {
         return "products";
     }
 
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
 }

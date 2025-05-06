@@ -11,11 +11,11 @@ import vn.com.t3h.service.ProductService;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+//@Service
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
-    @Qualifier("productHibernateRepositoryImpl")
+//    @Autowired
+//    @Qualifier("productJdbcTemplateRepositoryImpl")
     private ProductRepository productRepository;
 
     @Override
@@ -35,5 +35,9 @@ public class ProductServiceImpl implements ProductService {
             return productDTO;
         }).collect(Collectors.toList());
         return productDTOS;
+    }
+
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 }

@@ -13,10 +13,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository("productJdbcTemplateRepositoryImpl")
+//@Repository("productJdbcTemplateRepositoryImpl")
 public class ProductJdbcTemplateRepositoryImpl implements ProductRepository {
 
-    @Autowired
+//    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     @Override
@@ -49,4 +49,10 @@ public class ProductJdbcTemplateRepositoryImpl implements ProductRepository {
     public List<ProductEntity> findByCondition(Double price, String bookTitle, String publisher, String categoryName) {
         return new ArrayList<>();
     }
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+
 }

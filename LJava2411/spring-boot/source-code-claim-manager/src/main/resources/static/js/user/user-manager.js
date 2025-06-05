@@ -1,5 +1,5 @@
 PAGE_INIT = 0;
-const SIZE_DEFAULT = 3;
+const SIZE_DEFAULT = 6;
 const BASE_URL = 'http://localhost:8080/';
 var totalPage = 0;
 

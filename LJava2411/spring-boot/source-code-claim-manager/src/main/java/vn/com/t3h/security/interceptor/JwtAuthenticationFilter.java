@@ -49,12 +49,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
         }
 
-        if (!StringUtils.hasText(token) || !jwtTokenUtil.validateToken(token)) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.setContentType("application/json");
-            response.getWriter().write("{\"error\": \"Unauthorized: Invalid or missing token\"}");
-            return;
-        }
+//        if (!StringUtils.hasText(token) || !jwtTokenUtil.validateToken(token)) {
+//            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+//            response.setContentType("application/json");
+//            response.getWriter().write("{\"error\": \"Unauthorized: Invalid or missing token\"}");
+//            return;
+//        }
         chain.doFilter(request, response);
     }
 }

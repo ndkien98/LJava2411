@@ -41,9 +41,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
-
-    @Autowired
-    private JCacheCacheManager cacheManager;
+//
+//    @Autowired
+//    private JCacheCacheManager cacheManager;
 
     public Response<AuthDTO> authentication(LoginRequest loginRequest) {
         Response baseResponse = new Response();
@@ -83,9 +83,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         jsonNodes.put("refreshToken", refreshToken);
 
         // Cache JWT
-        Cache cache = cacheManager.getCache(Constant.CACHE_JWT);
-        assert cache != null;
-        cache.put(userEntity.getUsername(), jwt);
+//        Cache cache = cacheManager.getCache(Constant.CACHE_JWT);
+//        assert cache != null;
+//        cache.put(userEntity.getUsername(), jwt);
 
         baseResponse.setMessage("Success");
         baseResponse.setCode(HttpStatus.OK.value());

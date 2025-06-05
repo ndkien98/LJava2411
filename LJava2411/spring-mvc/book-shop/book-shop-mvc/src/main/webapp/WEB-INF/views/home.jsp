@@ -130,7 +130,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -142,7 +142,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -154,7 +154,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -166,7 +166,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -178,7 +178,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -190,7 +190,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -202,7 +202,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -214,7 +214,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -226,7 +226,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -238,7 +238,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -250,7 +250,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -262,7 +262,7 @@
                     <div class="card-body">
                         <a href="#" class="stretched-link">
                             <div class="d-flex align-items-center">
-                                <img src="img/50px.png">
+                                <img src="static/img/50px.png">
                                 <span class="category-title ms-3">Sách giáo khoa</span>
                             </div>
                         </a>
@@ -283,7 +283,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -294,7 +294,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -305,7 +305,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -316,7 +316,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -327,7 +327,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -338,7 +338,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -349,7 +349,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -360,7 +360,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -371,7 +371,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -382,7 +382,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -393,7 +393,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>
@@ -404,7 +404,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card p-3 mb-4">
                     <a href="#" class="img-wrap text-center">
-                        <img class="img-fluid" src="img/200px.png">
+                        <img class="img-fluid" src="static/img/200px.png">
                     </a>
                     <figcaption class="info-wrap mt-2">
                         <a href="#" class="title">Tên một sản phẩm</a>

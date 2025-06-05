@@ -22,6 +22,11 @@ public class ProductionController {
         return "products";
     }
 
+    @GetMapping("/production-detail")
+    public String productionDetail(Model model) {
+        return "production-detail";
+    }
+
     public void setProductService(ProductService productService) {
         this.productService = productService;
     }

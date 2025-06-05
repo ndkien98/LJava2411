@@ -13,7 +13,15 @@ public class CategoryEntity {
     @Column(name = "id")
     private int id;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    /*
+    cascade = CascadeType.PERSIST
+        -> khi save entity category, mà entity category đã có 1 list products là danh sách
+        các sản phẩm -> tất cả sản phẩm đó sẽ được tự động lưu vào database và tham chiếu
+        tới đúng category cha
+
+
+     */
+    @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE,fetch = FetchType.LAZY)
     private Set<ProductEntity> products;  // danh sách sdản phẩm thuộc thể loại này
 
     @Column(name = "category_name")

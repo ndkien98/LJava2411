@@ -3,7 +3,7 @@ package vn.com.t3h.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "products")
+@Table(name = "production")
 public class ProductEntity {
 
     @Id
@@ -13,7 +13,24 @@ public class ProductEntity {
     @Column(name = "book_title", nullable = false)
     private String bookTitle;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    /*
+    EAGER:
+        -> khi query lấy ra dữ liệu 1 product trong database, nó cũng sẽ
+        lấy luôn dữ liệu của category cha của products đó và đưa vào trong
+        thuộc tính category cua product
+    ProductEntity entity.category sẽ không bị null mà có đối tượng category tồn tại
+    LAZY:
+        -> khi query lấy ra dữ liệu 1 product trong database, nó cũng sẽ
+        không lấy luôn dữ liệu của category cha của products đó và đưa vào trong
+        thuộc tính category của product
+    ProductEntity entity.category sẽ bị null
+    -> lý thuyết:
+        su dụng cơ chế lazy load ->tức là khi nào gọi tới hàm getter của category thì khi đó mới thực hiện
+        câu query lấy ra category của product và đưa vào đây
+    nhưng thực tế khi gọi tới method getCategory -> sẽ bị lỗi không thể query lấy ra category được vì session query
+    da kếtthuwjusuc, để lấy ra được category -> phải gọi tới dao/repository tạo lại session và query lại từ đâu
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private CategoryEntity category; // Mỗi sản phẩm có một thể loại
 

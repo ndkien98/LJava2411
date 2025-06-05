@@ -7,7 +7,7 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-<!--    <context:component-scan base-package="vn.com.t3h"/>-->
+    <context:component-scan base-package="vn.com.t3h.controller"/>
 
     <!-- Cấu hình view resolver để hiển thị JSP
  để chỉ định cho spring (InternalResourceViewResolver) biết các file view được đặt tại folder nào

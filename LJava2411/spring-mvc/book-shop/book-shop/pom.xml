@@ -71,6 +71,12 @@
             <version>5.3.9</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version> <!-- Use javax.persistence 2.2 -->
+        </dependency>
+
         <!-- Remove Spring Data JPA (because you are not using Spring Data JPA in this case) -->
         <!-- <dependency>
             <groupId>org.springframework.data</groupId>
@@ -79,11 +85,7 @@
         </dependency> -->
 
         <!-- javax.persistence API -->
-        <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>javax.persistence-api</artifactId>
-            <version>2.2</version> <!-- Use javax.persistence 2.2 -->
-        </dependency>
+
 
         <!-- MySQL Connector/J -->
         <dependency>

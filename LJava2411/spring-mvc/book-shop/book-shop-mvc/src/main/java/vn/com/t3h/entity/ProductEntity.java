@@ -13,6 +13,10 @@ public class ProductEntity {
     @Column(length = 255,name = "author")
     private String author;
 
+    /*
+    tên filed: bookTitle
+    -> book_title
+     */
     private String bookTitle;
 
     private String description;

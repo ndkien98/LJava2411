@@ -10,7 +10,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac62c889-8c70-4eef-9a44-e4bb58103b31" name="Changes" comment="demo hibernate">
+      <change afterPath="$PROJECT_DIR$/../book-shop-mvc/src/main/webapp/WEB-INF/views/production-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../spring-boot/source-code-claim-manager/src/main/java/vn/com/t3h/config/CacheConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring-boot/source-code-claim-manager/src/main/java/vn/com/t3h/config/CacheConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../spring-boot/source-code-claim-manager/src/main/java/vn/com/t3h/service/impl/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring-boot/source-code-claim-manager/src/main/java/vn/com/t3h/service/impl/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/config/ConfigDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/config/ConfigDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/controller/ProductionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/controller/ProductionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/dao/impl/ProductHibernateRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/dao/impl/ProductHibernateRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/dao/impl/ProductJdbcTemplateRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/dao/impl/ProductJdbcTemplateRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/entity/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../book-shop-mvc/src/main/java/vn/com/t3h/entity/ProductEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-shop-mvc/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../book-shop-mvc/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-shop-mvc/src/main/webapp/WEB-INF/views/trang-chu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../book-shop-mvc/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-shop-mvc/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../book-shop-mvc/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/fbd5b466-52cf-48e8-bedb-277ce57204c1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fbd5b466-52cf-48e8-bedb-277ce57204c1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fbd5b466-52cf-48e8-bedb-277ce57204c1/storage_v2/_src_/schema/bookshopdb.HarRvg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fbd5b466-52cf-48e8-bedb-277ce57204c1/storage_v2/_src_/schema/bookshopdb.HarRvg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fbd5b466-52cf-48e8-bedb-277ce57204c1/storage_v2/_src_/schema/shop_book2.4M_czw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fbd5b466-52cf-48e8-bedb-277ce57204c1/storage_v2/_src_/schema/shop_book2.4M_czw.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/entity/CategoryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/entity/CategoryEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/com/t3h/entity/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/com/t3h/entity/ProductEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +48,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ndkien98"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ndkien98&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ndkien98/LJava2411.git",
-    "accountId": "06b5c655-858b-4299-b469-bbbe1f6d5aa5"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ndkien98/LJava2411.git&quot;,
+    &quot;accountId&quot;: &quot;06b5c655-858b-4299-b469-bbbe1f6d5aa5&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -60,31 +79,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.book-shop [clean].executor": "Run",
-    "Maven.book-shop [install].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Tomcat Server.Tomcat 10.1.34.executor": "Debug",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/T3h/LJava2502/core/core",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.book-shop [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.book-shop [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.34.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/t3h/LJava2411/LJava2411/LJava2411/spring-mvc/book-shop/book-shop&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\T3h\LJava2411\github\LJava2411\LJava2411\spring-mvc\book-shop\book-shop\src\main\webapp\resource" />
@@ -224,6 +243,15 @@
       <workItem from="1742213061567" duration="3313000" />
       <workItem from="1742219999745" duration="249000" />
       <workItem from="1746522704859" duration="46000" />
+      <workItem from="1746532804696" duration="2000" />
+      <workItem from="1746791167696" duration="23000" />
+      <workItem from="1748001794112" duration="2569000" />
+      <workItem from="1748264003557" duration="370000" />
+      <workItem from="1748350085503" duration="2298000" />
+      <workItem from="1748396228906" duration="1276000" />
+      <workItem from="1748591597264" duration="24000" />
+      <workItem from="1748592270016" duration="33000" />
+      <workItem from="1748605573010" duration="29000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -351,6 +379,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/vn/com/t3h/controller/rest/ProductResource.java</url>
           <line>36</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/vn/com/t3h/entity/CategoryEntity.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

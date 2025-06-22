@@ -1,3 +1,5 @@
+const selectedFiles = [];
+
 document.getElementById("submit-claim").addEventListener("click", addClaim);
 
 async function addClaim() {
@@ -9,11 +11,9 @@ async function addClaim() {
             reader.onerror = error => reject(error);
         });
 
-    const files = document.getElementById('file-upload').files;
-
-    // Convert files to document list
+    // Duyệt toàn bộ file đã lưu
     const documents = [];
-    for (const file of files) {
+    for (const file of selectedFiles) {
         const base64Encoded = await toBase64(file);
         documents.push({
             documentName: file.name,
@@ -23,7 +23,7 @@ async function addClaim() {
         });
     }
 
-    // Gather form data
+    // Tiếp tục như cũ...
     const payload = {
         nameProduct: document.getElementById("insurance-product").value,
         description: document.getElementById("claim-description").value,
@@ -40,7 +40,6 @@ async function addClaim() {
         documents: documents
     };
 
-    // Send request
     try {
         const response = await fetch("http://localhost:8080/api/claim/create", {
             method: "POST",
@@ -51,10 +50,7 @@ async function addClaim() {
             body: JSON.stringify(payload)
         });
 
-        if (!response.ok) {
-            throw new Error(`Server returned ${response.status}`);
-        }
-
+        if (!response.ok) throw new Error(`Server returned ${response.status}`);
         const result = await response.json();
         alert("Yêu cầu đã được gửi thành công!");
         console.log(result);
@@ -65,28 +61,14 @@ async function addClaim() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.getElementById('file-upload').addEventListener('change', function(event) {
+document.getElementById('file-upload').addEventListener('change', function (event) {
     const fileList = event.target.files;
     const documentList = document.getElementById('document-list');
 
     Array.from(fileList).forEach(file => {
+        // Lưu vào mảng selectedFiles
+        selectedFiles.push(file);
+
         const fileType = file.type.split('/')[1].toUpperCase();
         const uploadDate = new Date().toISOString().split('T')[0];
 
@@ -107,7 +89,6 @@ document.getElementById('file-upload').addEventListener('change', function(event
         viewButton.style.marginRight = '2%';
         viewButton.textContent = 'Xem';
         viewButton.addEventListener('click', () => {
-            // Handle file view action
             const url = URL.createObjectURL(file);
             window.open(url, '_blank');
         });
@@ -117,6 +98,10 @@ document.getElementById('file-upload').addEventListener('change', function(event
         deleteButton.textContent = 'Xóa';
         deleteButton.addEventListener('click', () => {
             row.remove();
+            const index = selectedFiles.indexOf(file);
+            if (index > -1) {
+                selectedFiles.splice(index, 1); // Xoá khỏi mảng khi xóa row
+            }
         });
 
         actionCell.appendChild(viewButton);
@@ -129,4 +114,7 @@ document.getElementById('file-upload').addEventListener('change', function(event
 
         documentList.appendChild(row);
     });
+
+    // Xóa file input sau khi load để có thể chọn lại file đã chọn
+    event.target.value = '';
 });

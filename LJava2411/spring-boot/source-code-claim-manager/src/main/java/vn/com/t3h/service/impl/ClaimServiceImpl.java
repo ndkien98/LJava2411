@@ -1,33 +1,102 @@
 package vn.com.t3h.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import vn.com.t3h.entity.ClaimEntity;
+import vn.com.t3h.entity.*;
 import vn.com.t3h.mapper.ClaimMapper;
 import vn.com.t3h.repository.ClaimRepository;
+import vn.com.t3h.repository.ClaimStatusRepository;
+import vn.com.t3h.repository.CustomerEntityRepository;
+import vn.com.t3h.repository.InsuranceProductRepository;
 import vn.com.t3h.service.ClaimService;
+import vn.com.t3h.service.FileService;
 import vn.com.t3h.service.dto.ClaimDTO;
+import vn.com.t3h.service.dto.request.ClaimRequest;
+import vn.com.t3h.service.dto.request.CustomerRequest;
+import vn.com.t3h.service.dto.request.DocumentRequest;
+import vn.com.t3h.service.dto.response.Response;
 import vn.com.t3h.service.dto.response.ResponsePage;
+import vn.com.t3h.utils.Constant;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 
 @Service
 public class ClaimServiceImpl implements ClaimService {
 
+
+
     @Autowired
     private ClaimRepository claimRepository;
 
-    private final ClaimMapper claimMapper;
+    @Autowired
+    private InsuranceProductRepository insuranceProductRepository;
 
     @Autowired
-    public ClaimServiceImpl(ClaimMapper claimMapper) {
-        this.claimMapper = claimMapper;
+    private ClaimStatusRepository claimStatusRepository;
+
+    @Autowired
+    private ClaimMapper claimMapper;
+
+    @Autowired
+    private FileService fileService;
+
+    @Autowired
+    private CustomerEntityRepository customerEntityRepository;
+
+
+    public Response<String> createClaim(ClaimRequest claimRequest) {
+
+        // create claim Entity
+        ClaimEntity claimEntity = new ClaimEntity();
+        claimEntity.setAmount(claimRequest.getAmount());
+        claimEntity.setClaimDate(claimRequest.getClaimDate());
+        Long totalClaim = claimRepository.count();
+        claimEntity.setCode(Constant.createCodeClaim(totalClaim));
+        claimEntity.setDescription(claimRequest.getDescription());
+        claimEntity.setCreatedBy(Constant.ROLE_ADMIN_CODE);
+        claimEntity.setLastModifiedBy(Constant.ROLE_ADMIN_CODE);
+
+        // create customer Entity
+        CustomerEntity customerEntity = new CustomerEntity();
+        CustomerRequest customerRequest = claimRequest.getCustomer();
+        customerEntity.setName(customerRequest.getName());
+        customerEntity.setPhoneNumber(customerRequest.getPhoneNumber());
+        customerEntity.setEmail(customerRequest.getEmail());
+        customerEntity.setAddress(customerRequest.getAddress());
+
+        // create insurance product Entity
+        InsuranceProductEntity insuranceProductEntity = insuranceProductRepository.findByName(claimRequest.getNameProduct());
+        claimEntity.setInsuranceProductEntity(insuranceProductEntity);
+
+        // create status
+        ClaimStatusEntity claimStatusEntity = claimStatusRepository.findByCode(Constant.CLAIM_STATUS.NEW.name());
+        claimEntity.setClaimStatusEntity(claimStatusEntity);
+
+        List<ClaimDocumentEntity> claimDocumentEntityList = fileService.getClaimDocuments(claimRequest.getDocuments(),claimEntity);
+
+        claimEntity.setClaimDocumentEntities(claimDocumentEntityList);
+        claimEntity.setCustomerEntity(customerEntity);
+        customerEntity.setClaims(Arrays.asList(claimEntity));
+        customerEntityRepository.save(customerEntity);
+
+        Response<String> response = new Response();
+        response.setMessage("claim created successfully with code " + claimEntity.getCode());
+        response.setData(claimEntity.getCode());
+        return response;
     }
 
     @Override
@@ -70,4 +139,7 @@ public class ClaimServiceImpl implements ClaimService {
         response.setPageIndex(pageable.getPageNumber());
         return response;
     }
+
+
+
 }

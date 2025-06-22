@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vn.com.t3h.service.ClaimService;
 import vn.com.t3h.service.dto.ClaimDTO;
+import vn.com.t3h.service.dto.request.ClaimRequest;
 import vn.com.t3h.service.dto.response.ResponsePage;
 
 import java.time.LocalDate;
@@ -33,9 +34,8 @@ public class ClaimResource {
     }
 
 
-    @PostMapping
-    public ResponseEntity<ResponsePage<ClaimDTO>> save(@RequestParam("claimId")Long claimId,
-                                                       @RequestBody ClaimDTO claimDTO){
-        return null;
+    @PostMapping("/create")
+    public ResponseEntity<?> createdClaim(@RequestBody ClaimRequest claimRequest){
+        return ResponseEntity.ok(claimService.createClaim(claimRequest));
     }
 }

@@ -2,6 +2,8 @@ package vn.com.t3h.service;
 
 import org.springframework.data.domain.Pageable;
 import vn.com.t3h.service.dto.ClaimDTO;
+import vn.com.t3h.service.dto.request.ClaimRequest;
+import vn.com.t3h.service.dto.response.Response;
 import vn.com.t3h.service.dto.response.ResponsePage;
 
 import java.time.LocalDate;
@@ -16,4 +18,6 @@ public interface ClaimService {
             String codeStatus,
             Pageable pageable
     );
+
+    public Response<String> createClaim(ClaimRequest claimRequest);
 }

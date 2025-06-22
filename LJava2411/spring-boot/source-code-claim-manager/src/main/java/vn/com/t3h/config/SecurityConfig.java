@@ -61,7 +61,11 @@ public class SecurityConfig {
                             .requestMatchers(
                                     "/assets/**", "/fonts/**", "/homeguest_files/**",
                                     "/js/**", "/libs/**", "/loginmetlife/**",
-                                    "/page404/**", "/scss/**", "/tasks/**", "/css/**", "/images/**","/cms-rs/**","/file/**").permitAll()
+                                    "/page404/**", "/scss/**", "/tasks/**", "/css/**", "/images/**","/cms-rs/**","/file/**","/api/claim/create",
+                                    "/swagger-ui/**",
+                                    "/v3/api-docs/**",
+                                    "/swagger-resources/**",
+                                    "/webjars/**").permitAll()
                             .requestMatchers("/resource/**").permitAll()
                             .requestMatchers("/auth/**").permitAll()
                             .requestMatchers("/kaira/**").permitAll()

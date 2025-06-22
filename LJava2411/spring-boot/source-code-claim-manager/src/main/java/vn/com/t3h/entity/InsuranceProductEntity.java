@@ -4,14 +4,14 @@ package vn.com.t3h.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+
 
 @Entity
 @Table(name = "insurance_product")
 
 public class InsuranceProductEntity extends BaseEntity {
 
+    @Column(name = "name",unique = true)
     private String name;
     @Column(name = "description",columnDefinition = "text")
     private String description;

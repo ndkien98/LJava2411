@@ -1,10 +1,14 @@
 
 package vn.com.t3h.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "customer")
@@ -17,8 +21,18 @@ public class CustomerEntity extends BaseEntity {
     private String bankNumber;
     private String bankName;
 
+    @OneToMany(mappedBy = "customerEntity",cascade = CascadeType.ALL)
+    List<ClaimEntity> claims;
     public CustomerEntity() {
 
+    }
+
+    public List<ClaimEntity> getClaims() {
+        return claims;
+    }
+
+    public void setClaims(List<ClaimEntity> claims) {
+        this.claims = claims;
     }
 
     public String getName() {

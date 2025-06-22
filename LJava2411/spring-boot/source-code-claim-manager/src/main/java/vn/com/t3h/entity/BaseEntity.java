@@ -12,9 +12,9 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime createdDate;
+    private LocalDateTime createdDate = LocalDateTime.now();
     private String createdBy;
-    private LocalDateTime lastModifiedDate;
+    private LocalDateTime lastModifiedDate = LocalDateTime.now();
     private String lastModifiedBy;
     private Boolean deleted = false;
 

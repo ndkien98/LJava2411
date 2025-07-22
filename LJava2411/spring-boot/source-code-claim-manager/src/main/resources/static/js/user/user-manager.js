@@ -76,7 +76,7 @@ function renderPaging(response){
 
     let preIcon = `<li class="page-item">
                                         <a class="page-link" onclick="changePage(${pageIndex - 1})" aria-label="Next">
-                                           <span aria-hidden="true">&laquo;</span>
+                                           <span aria-hidden="true">&laquo;.</span>
                                         </a>
                                     </li>`
     pageBody.innerHTML += preIcon;
